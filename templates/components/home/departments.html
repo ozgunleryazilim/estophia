@@ -1,0 +1,34 @@
+{% load static i18n %}
+{% load home %}
+
+<!-- Start of .our-departments-2 -->
+<section class="our-departments-2" id="departments">
+    <div class="container">
+        <h1 class="section-title section-title_60">
+            {% blocktrans trimmed %}
+                Which <span>is your choice for your aesthetic journey?</span>
+            {% endblocktrans %}
+        </h1>
+        <div class="our-departments-2__carousel owl-carousel owl-theme">
+            {% get_home_departments gender=gender as departments %}
+            {% static 'images/icons/dental.png' as default_icon %}
+            {% for department in departments %}
+                <div class="our-departments-2__inner-item">
+                    <div class="icon">
+                        <img
+                                {% if department.icon %}
+                                    src="{{ department.icon.url }}"
+                                {% else %}
+                                    src="{{ default_icon }}"
+                                {% endif %}
+                                    alt="{{ department.title }}">
+                    </div>
+                    <h1 class="title">{{ department.title }}</h1>
+                    <p class="text">{{ department.description|default:"" }}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!-- End of .our-departments-2 -->

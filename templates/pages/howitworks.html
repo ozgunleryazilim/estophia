@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load howitworks %}
+
+{% block content %}
+
+    {% get_howitworks_seo_obj gender=gender as howitworks_obj %}
+    {% include "components/banner.html" with obj=howitworks_obj %}
+
+    {% include "components/howitworks/section_1.html" %}
+
+    {% include "components/howitworks/section_2.html" %}
+
+    {% include "components/howitworks/section_3.html" %}
+
+    <section class="departments-3 main-blog">
+        {% include "components/services/services_form.html" %}
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load i18n %}
+{% if service.faq_list %}
+    <div class="department-faq">
+        <h1 class="title">{% trans "FAQ's" %}</h1>
+        <div class="department-accardion">
+            {% for faq in service.faq_list %}
+                <div class="item">
+                    <h2 class="item-title"><span>{{ forloop.counter }}.</span>
+                        {{ faq.question }}<i
+                                class="fa fa-angle-down"></i></h2>
+                    <div class="item-text">
+                        {{ faq.answer|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

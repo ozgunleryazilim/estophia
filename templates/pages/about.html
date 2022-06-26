@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load about %}
+
+{% block content %}
+    {% get_about_seo_obj gender=gender as page_obj %}
+    {% include "components/banner.html" with obj=page_obj %}
+
+    {% include "components/about/about_1.html" %}
+
+    {% include "components/home/how_it_works.html" %}
+
+    {% include "components/about/about_2.html" %}
+
+{% endblock %}

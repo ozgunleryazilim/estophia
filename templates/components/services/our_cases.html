@@ -1,0 +1,25 @@
+{% if service.ourcases_list %}
+    <div class="department-cases">
+        <h1 class="title">Our Cases</h1>
+        <div class="department-cases__carousel owl-carousel owl-theme">
+
+            {% for ourcase in service.ourcases_list %}
+                <div class="item">
+                    {% if ourcase.image %}
+                        <div class="img">
+                            <img src="{{ ourcase.image.url }}" alt="{{ ourcase.title }}">
+                        </div>
+                    {% endif %}
+                    <div class="icon">
+                    </div>
+                    <h1 class="name">{{ ourcase.title }}</h1>
+                    <h2 class="profession">{{ ourcase.subtitle }}</h2>
+                    <div class="text">
+                        {{ ourcase.description|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endif %}

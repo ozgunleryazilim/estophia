@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load parler_tags %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<li class="navbar__menu-item">
+    <a class="navbar__menu-link" href="#">
+        {{ LANGUAGE_CODE|upper }}
+    </a>
+    <ul class="navbar__submenu">
+        {% for language in languages %}
+            <li class="navbar__submenu-item">
+                <a class="navbar__submenu-link" href="{% get_translated_url language.code %}" role="button"
+                   title="{{ language.code }}"> {{ language.name_local|upper }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</li>

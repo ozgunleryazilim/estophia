@@ -1,0 +1,19 @@
+<div class="video m-2">
+    <a class="photogallery-item" data-fancybox="gallery"
+            {% if beforeafter.video %}
+       href="{{ beforeafter.video.url }}"
+            {% else %}
+       href="{{ beforeafter.image.url }}"
+            {% endif %}
+    >
+        <span class="h-line"></span>
+        <span class="v-line"></span>
+        <img src="{{ beforeafter.image.url }}" alt="Estophia before & after ">
+    </a>
+</div>
+
+{#<a href="./images/jpg/case13.jpg" data-fancybox="gallery" class="photogallery-item">#}
+{#    <span class="h-line"></span>#}
+{#    <span class="v-line"></span>#}
+{#    <img src="./images/jpg/case13.jpg">#}
+{#</a>#}

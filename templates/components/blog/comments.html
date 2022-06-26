@@ -1,0 +1,25 @@
+{% load static i18n %}
+
+<div class="single-card__comments">
+    <h1 class="title">{% trans "Comments" %}</h1>
+    <div class="single-card__comments-items">
+        {% for comment in blog.comments %}
+        <div class="item">
+            <div class="img">
+                <img src="{% static 'images/jpg/comment-man.jpg' %}" alt="Estophia comment avatar">
+            </div>
+            <div class="content">
+                <div class="date-reply">
+                    <span class="date">{{ comment.created_date|date:"DATE_FORMAT" }}</span>
+                </div>
+                <h3 class="name">{{ comment.name }}</h3>
+                <p class="text">
+                    {{ comment.comment|linebreaksbr }}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>

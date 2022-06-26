@@ -1,0 +1,54 @@
+{% load static i18n %}
+
+{# TODO: howitworks_url eklenecek... #}
+<!-- Start of .about-3 -->
+<section class="about-3" id="about">
+    <div class="container">
+
+        <div class="content">
+            <h4>{% trans "How it works" %}</h4>
+            <h1 class="section-title section-title_60">
+                {% blocktrans trimmed %}
+                    Aesthetic Experience<br><span>In Turkey</span>
+                {% endblocktrans %}
+            </h1>
+            <h2>
+                {% blocktrans trimmed %}
+                    Watch the video to discover our special privileges and learn about the Estophia aesthetic
+                    experience.
+                {% endblocktrans %}
+            </h2>
+            <p>
+                {% blocktrans trimmed %}
+                    Lorem ipsum sit amet dolor. Dummy text di sinatro polon. lorem ipsum sit amet dolor. text did dummy
+                    texed. just to filling empty ares. test dolor lorem.
+                {% endblocktrans %}
+            </p>
+            <a href="{{ howitworks_url }}" class="read-more">{% trans "Detailed Information" %}</a>
+            <div class="signature">
+                <img src="{% static 'images/png/signature.png' %}" alt="signature">
+                <h4>{% trans "Medical Director" %}<br><span>Cem Çağıl Şahin</span></h4>
+            </div>
+        </div>
+
+        <div class="video">
+            {# TODO: Video url guncellenecek... #}
+            <a class="btn-video-outer" data-fancybox
+               href="{{ global_preferences.common__home_howitworks_youtube_video_link }}">
+                <span class="btn-video">
+                    <i class="fa fa-play btn-play"></i>{% trans "watch video" %}
+                </span>
+            </a>
+            <div class="img">
+                {% if gender == 'male' %}
+                {% static 'images/male/home/how-it-works.jpg' as howitworks_image %}
+                {% else %}
+                {% static 'images/female/home/how-it-works.jpg' as howitworks_image %}
+                {% endif %}
+                <img src="{{ howitworks_image }}" alt="{% trans 'Estophia How it works' %}">
+            </div>
+        </div>
+        {% include "components/home/gallery.html" %}
+    </div>
+</section>
+<!-- End of .about-3 -->

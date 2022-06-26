@@ -1,0 +1,42 @@
+{% load static i18n %}
+
+<!-- Start of .about-3 -->
+<section class="about-3" id="howitworks_2">
+    <div class="container">
+
+        <div class="content">
+            <h4>{% trans "Step 2" %}</h4>
+            <h1 class="section-title section-title_60">
+                {% blocktrans trimmed %}
+                    Get Information<br><span>Online!</span>
+                {% endblocktrans %}
+            </h1>
+            <h2>
+                {% blocktrans trimmed %}
+                    During your interview, you can have detailed information about pricing, aesthetic process,
+                    accommodation, transfer and all the issues you are curious about.
+                {% endblocktrans %}
+            </h2>
+            <p>
+                {% blocktrans trimmed %}
+                    Lorem ipsum sit amet dolor. Dummy text di sinatro polon. lorem ipsum sit amet dolor. text did dummy
+                    texed. just to filling empty ares. test dolor lorem.
+                {% endblocktrans %}
+            </p>
+
+        </div>
+
+        <div class="video">
+
+            <div class="img">
+                {% if gender == 'male' %}
+                    {% static 'images/male/howitworks/section_2.png' as section_2_image %}
+                {% else %}
+                    {% static 'images/female/howitworks/section_2.png' as section_2_image %}
+                {% endif %}
+                <img src="{{ section_2_image }}" alt="{% trans 'Estophia How it works 2' %}">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of .about-3 -->

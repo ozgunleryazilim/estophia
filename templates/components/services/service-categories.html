@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load services %}
+
+<div class="departments-blog">
+    <h1 class="title">{% trans "Services" %}</h1>
+    {% get_services gender=gender as service_categories %}
+    <ul class="lists">
+        {% for service_item in service_categories %}
+            <li class="list-item">
+                <a href="{{ service_item.get_absolute_url }}"
+                   class="{% if service_item == service %}active{% endif %}">
+                    <span>{{ service_item.title }}</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

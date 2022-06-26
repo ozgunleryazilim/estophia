@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+    <div class="container my-5 justify-content-center">
+        <a href="{% url 'male:home' %}" class="btn btn_blue">{% trans "Male" %}</a>
+        <a href="{% url 'female:home' %}" class="btn btn-2_pink">{% trans "Female" %}</a>
+    </div>
+
+{% endblock %}
+
+{% block popup_modals %}
+{% endblock %}

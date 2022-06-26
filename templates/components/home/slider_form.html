@@ -1,0 +1,49 @@
+{% load i18n %}
+
+<!-- Start of .benefits-form -->
+<div class="container">
+    <div class="benefits-form">
+        <div class="benefits-form__form m-auto">
+            <h1 class="section-title text-center">
+                {% blocktrans trimmed %}
+                Looking for <span>a quality medical services?</span>
+                {% endblocktrans %}
+            </h1>
+            <form action="test.html">
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <input type="text" class="input-box form-control" placeholder="{% trans 'Name/Surname' %}"
+                                name="name" required>
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <input type="email" class="input-box form-control" placeholder="{% trans 'E-mail' %}"
+                               name="email" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <input type="text" class="input-box form-control" placeholder="{% trans 'Phone Number' %}"
+                               required name="phone-number">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <select class="input-box form-control" required name="treatment-selection">
+                            <option value="">{% trans 'Treatment Selection' %}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12">
+                        <textarea class="input-box form-control" placeholder="{% trans 'Your message...' %}"
+                               required name="message"></textarea>
+                    </div>
+
+                </div>
+
+                {% include "recaptcha/recaptcha.html" %}
+                <button class="btn btn_pink" type="submit">{% trans "BOOK AN APPOINTMENT NOW" %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End of .header-bottom -->

@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load blogs %}
+<div class="also-like">
+    <h1 class="title">{% trans "You may also like" %}</h1>
+    {% get_random_blogs gender=gender count=2 blog=blog as suggestions %}
+    {% for suggestion in suggestions %}
+    <a href="{{ suggestion.get_absolute_url }}" class="item">
+        <div class="img">
+            <img src="{{ suggestion.image.url }}" alt="{{ suggestion.title }}">
+            <span class="date">{{ suggestion.created_date|date:"DATE_FORMAT" }}</span>
+        </div>
+        <h4 class="title">{{ suggestion.title }}</h4>
+        <p class="text">
+            {{ suggestion.description|safe }}
+        </p>
+        <span class="read-more-2">{% trans "Read More" %}</span>
+    </a>
+    {% endfor %}
+
+</div>

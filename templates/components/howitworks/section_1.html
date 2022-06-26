@@ -1,0 +1,47 @@
+{% load static i18n %}
+
+<!-- Start of .about-4 -->
+<section class="about-4" id="howitworks_1">
+    <div class="container">
+        <div class="content">
+            <div class="video">
+                <div class="img">
+                    {% if gender == 'male' %}
+                        {% static 'images/male/howitworks/section_1.png' as section_1_image %}
+                    {% else %}
+                        {% static 'images/female/howitworks/section_1.png' as section_1_image %}
+                    {% endif %}
+                    <img src="{{ section_1_image }}" alt="{% trans 'Estophia How it works 1' %}">
+                </div>
+            </div>
+            <div class="content-right">
+                <h4>{% trans "Step 1" %}</h4>
+                <h1 class="section-title">
+                    {% blocktrans trimmed %}
+                        Fill in the form <br><span>& Contact Us</span>
+                    {% endblocktrans %}
+                </h1>
+                <h2>
+                    {% blocktrans trimmed %}
+                        It will be enough to fill out our form to start your Aesthetic journey.
+                    {% endblocktrans %}
+                </h2>
+                <p>
+                    {% blocktrans trimmed %}
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Riss commodo viverra
+                        maecenal accumsan lacus vel facilisis.
+                    {% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans trimmed %}
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do elusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Riss commodo viverra
+                        maecenal accumsan lacus vel facilisis.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of .about-4 -->

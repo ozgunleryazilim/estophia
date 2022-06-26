@@ -1,0 +1,33 @@
+{% load static i18n %}
+<!-- Start of .about-4 -->
+<section class="about-4" id="about">
+    <div class="container">
+        <div class="content">
+            <div class="video">
+                <a class="btn-video-outer" data-fancybox href="{{ page_obj.section_1_youtube_link }}">
+                            <span class="btn-video">
+                                <i class="fa fa-play btn-play"></i>{% trans "watch video" %}
+                            </span>
+                </a>
+                <div class="img">
+                    {% static 'images/jpg/about-html.jpg' as default_image %}
+                    <img
+                            {% if page_obj.section_1_image %}
+                            src="{{ page_obj.section_1_image.url }}"
+                            {% else %}
+                            src="{{ default_image }}"
+                            {% endif %}
+                        alt="{{ page_obj.section_1_title|striptags}}"
+                    >
+                </div>
+            </div>
+            <div class="content-right">
+                <h4>{{ page_obj.section_1_pretitle }}</h4>
+                <h1 class="section-title">{{ page_obj.section_1_title|upper|safe }}</h1>
+                <h2>{{ page_obj.section_1_subtitle|default:'' }}</h2>
+                {{ page_obj.section_1_body|safe }}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of .about-4 -->

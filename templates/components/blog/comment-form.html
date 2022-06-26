@@ -1,0 +1,8 @@
+{% load i18n %}
+<form class="single-card__post-comment" method="post" id="comment-form">
+    {% csrf_token %}
+    {{ form.comment }}
+    {{ form.name }}
+    {{ form.email }}
+    <button class="btn btn_pink" type="submit">{% trans "Post comment" %}</button>
+</form>

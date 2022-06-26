@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block header %}
+    {% include "components/base/header-top.html" %}
+    {% include "components/base/header-middle.html" with header_class="header-middle_transparent" %}
+{% endblock %}
+
+{% block content %}
+    <!-- Start of .header-bottom -->
+    <header class="header-bottom-2">
+
+        {% include "components/home/slider.html" %}
+
+        {% include "components/home/slider_form.html" %}
+
+    </header>
+    <!-- End of .header-bottom -->
+
+    {% include "components/home/about.html" %}
+
+    {% include "components/home/departments.html" %}
+
+    {% include "components/home/how_it_works.html" %}
+
+    {% include "components/home/blogs.html" %}
+
+{% endblock %}

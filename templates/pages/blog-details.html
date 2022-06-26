@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% load blogs %}
+
+{% block content %}
+
+    {% get_blogs_seo_obj gender=gender as blogs_page_obj %}
+    {% include "components/banner.html" with obj=blogs_page_obj %}
+
+
+    <!-- Start of .latest-news-4 -->
+    <section class="latest-news-4 main-blog">
+
+        <div class="container container_right-sidebar">
+            <div class="sidebar">
+                <div class="blog-sidebar">
+                    {% include "components/blog/categories.html" %}
+
+                    {% include "components/blog/popular-blogs.html" %}
+
+                    {% include "components/blog/follow-us.html" %}
+                </div>
+            </div>
+            <div class="article">
+                <div class="single-card">
+                    <div class="img">
+                        <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                    </div>
+                    <span class="date">{{ blog.created_date|date:"DATE_FORMAT" }}</span>
+                    <span class="comments">
+                        {% blocktrans trimmed with comment_count=blog.comments.count %}
+                            <span>{{ comment_count }}</span> Comments
+                        {% endblocktrans %}
+                    </span>
+                    <h1 class="title">{{ blog.title }}</h1>
+                    {{ blog.content|safe }}
+
+                    <div class="share">
+                        <h4>{% trans "Share on Social Media" %}:</h4>
+                        <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" title="vk"><i class="fa fa-vk"></i></a>
+                        <a href="#" title="instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" title="pinterest"><i class="fa fa-pinterest-p"></i></a>
+                    </div>
+
+                    {% include "components/blog/comments.html" %}
+
+                    {% include "components/blog/comment-form.html" %}
+
+                    {% include "components/blog/blog-suggestions.html" %}
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End of .latest-news-4 -->
+
+
+{% endblock %}

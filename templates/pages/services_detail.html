@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% include "components/banner.html" with obj=service %}
+
+    <!-- Start of departments-3 -->
+    <section class="departments-3 main-blog">
+
+        <div class="container container_right-sidebar">
+            <div class="article">
+                <div class="departments-3__single">
+                    {{ service.content|safe }}
+
+                    {% include "components/services/our_cases.html" %}
+
+                    {% include "components/services/faqs.html" %}
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="departments-sidebar">
+                    {% include "components/services/service-categories.html" %}
+                    {% include "components/services/appointment-form.html" %}
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End of departments-3 -->
+
+    <section class="departments-3 main-blog">
+        {% include "components/services/services_form.html" %}
+    </section>
+
+{% endblock %}

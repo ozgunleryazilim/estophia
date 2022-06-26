@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load blogs %}
+
+<div class="categories">
+    <h1 class="blog-sidebar-title">{% trans "Categories" %}</h1>
+    <ul class="lists">
+        {% get_blog_categories gender=gender as categories %}
+        {% for category in categories %}
+            <li class="item">
+                <a href="{{ category.get_absolute_url }}">
+                    <span class="name">{{ category.title }}</span>
+                    <span class="count">{{ category.blog_counts }}</span>
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+</div>

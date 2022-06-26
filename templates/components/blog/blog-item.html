@@ -1,0 +1,16 @@
+{% load i18n %}
+
+<a href="{{ blog.get_absolute_url }}" class="item">
+    <div class="img">
+        {% if blog.image %}
+            <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+        {% endif %}
+        <span class="date">{{ blog.created_date|date:"DATE_FORMAT" }}</span>
+
+    </div>
+    <h4 class="title">{{ blog.title }}</h4>
+    <div class="text">
+        {{ blog.description|safe }}
+    </div>
+    <span class="read-more-2">{% trans "Read More" %}</span>
+</a>

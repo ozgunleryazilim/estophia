@@ -1,0 +1,50 @@
+{% load static i18n %}
+{% load services %}
+
+<!-- Popup Form -->
+<div class="popup-form">
+    <div class="inner-block">
+        <span class="popup-form-close" id="popup-form-close">&times;</span>
+        <div class="img">
+            {% if gender == "male" %}
+                {% static 'images/male/appointment_form.jpg' as appointment_image %}
+            {% else %}
+                {% static 'images/female/appointment_form.jpg' as appointment_image %}
+            {% endif %}
+            <img src="{{ appointment_image }}" alt="{% trans 'Estophia Appointment Form' %}">
+        </div>
+        <form>
+            <h1 class="section-title">{% trans "Make an appointment" %}</h1>
+            <div class="input-box">
+                <label for="popup-name">{% trans "Name" %} *</label>
+                <input type="text" id="popup-name" required>
+            </div>
+
+            <div class="input-box">
+                <label for="popup-email">{% trans "Email" %} *</label>
+                <input type="text" id="popup-email" required>
+            </div>
+
+            <div class="input-box">
+                <label for="popup-phone">{% trans "Phone" %} *</label>
+                <input type="tel" id="popup-phone" required>
+            </div>
+
+            <div class="select-box">
+                <i class="fa fa-angle-down"></i>
+                {% get_services gender=gender as service_list %}
+                <select>
+                    <option value="">{% trans "Choose Service" %}</option>
+                    {% for service in service_list %}
+                        <option value="{{ service.slug }}">{{ service.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="your-message">{% trans "Your Message" %} *</label>
+                <input type="text" id="your-message" required>
+            </div>
+            <button type="submit" class="btn btn-2_pink">{% trans "Send" %}</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load blogs %}
+
+<div class="feeds">
+    <h1 class="blog-sidebar-title">{% trans "Popular Blogs" %}</h1>
+    <ul class="lists d-block">
+        {% get_popular_blogs gender=gender as popular_blogs %}
+        {% for popular_blog in popular_blogs %}
+            <li class="item">
+                <a href="{{ popular_blog.get_absolute_url }}">
+                    <div class="img">
+                        <img src="{{ popular_blog.image.url }}" alt="{{ popular_blog.title }}">
+                    </div>
+                    <div class="content">
+                        <h2 class="title">{{ popular_blog.title }}</h2>
+                        <span class="time">{{ popular_blog.created_date|date:"DATE_FORMAT" }}</span>
+                    </div>
+                </a>
+            </li>
+
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,26 @@
+{% load static i18n %}
+{% load home %}
+
+<!-- Start of .header-bottom-2__banner -->
+<div class="header-bottom-2__banner owl-carousel owl-theme">
+
+    {% get_home_sliders gender=gender as sliders %}
+
+    {% for slider in sliders %}
+        <div class="slide-item">
+            <img src="{{ slider.image.url }}" alt="{{ slider.title }}">
+            <div class="slide-item__bg"></div>
+            <div class="container">
+                <div class="slide-item__block">
+                    <h1 class="slide-item__title">
+                        {{ slider.title }}
+                    </h1>
+                    <h4 class="slide-item__subtitle">{{ slider.subtitle|default:"" }}</h4>
+                    <a href="#" class="btn btn_pink">BOOK A CONSULTATION</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+<!-- End of .header-bottom-2__banner -->

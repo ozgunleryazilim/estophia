@@ -1,0 +1,23 @@
+{% load static i18n %}
+
+
+{% static 'images/banner/banner4.jpg' as default_banner_image %}
+<!-- Start of .header-bottom-4 -->
+<header class="header-bottom-4">
+    <img
+            {% if obj.banner_image %}
+                src="{{ obj.banner_image.url }}"
+            {% else %}
+                src="{{ default_banner_image }}"
+            {% endif %}
+                alt="{{ obj.banner_title|striptags }}">
+
+    <div class="container">
+        <h1 class="section-title">{{ obj.banner_title|safe }}</h1>
+        <div class="w-50">
+            {{ obj.banner_description|safe }}
+        </div>
+        <a href="#" class="btn btn-2_pink text-white py-3">{% trans "CONTACT US" %}</a>
+    </div>
+</header>
+<!-- End of .header-bottom-4 -->

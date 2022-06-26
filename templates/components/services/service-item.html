@@ -1,0 +1,11 @@
+{% load i18n %}
+<a href="{{ service.get_absolute_url }}" class="item col-12 col-md-4 m-2">
+    <div class="img">
+        <img src="{{ service.image.url }}" alt="{{ service.title }}">
+    </div>
+    <h1 class="title">{{ service.title }}</h1>
+    <div class="text">
+        {{ service.home_description|safe }}
+    </div>
+    <span class="read-more-2">{% trans "read more" %}</span>
+</a>

@@ -1,0 +1,39 @@
+{% load static i18n %}
+
+<!-- Start of .our-numbers -->
+<section class="medical-center-2">
+    <div class="container">
+        <div class="img">
+            {% if gender == 'male' %}
+                {% static 'images/male/about/medical-center.jpg' as about_image %}
+            {% else %}
+                {% static 'images/female/about/medical-center.jpg' as about_image %}
+            {% endif %}
+            <img src="{{ about_image }}" alt="{% trans 'Estophia End-To-End Aesthetic Journey' %}">
+        </div>
+        <div class="content">
+            <h1 class="section-title">
+                {% blocktrans trimmed %}
+                    End-To-End<br><span>Aesthetic Journey</span>
+                {% endblocktrans %}
+            </h1>
+            <p class="text">
+                {% blocktrans trimmed %}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Riss commodo viverra maecenas
+                    accumsan lacus vel facilisis.
+                {% endblocktrans %}
+            </p>
+            <ul class="list">
+                <li><i class="fa fa-check"></i>{% trans "International Doctors" %}</li>
+                <li><i class="fa fa-check"></i>{% trans "Free Aesthetic Planning" %}</li>
+                <li><i class="fa fa-check"></i>{% trans "Post-operative Care" %}</li>
+                <li><i class="fa fa-check"></i>{% trans "Hospitality Privileges" %}</li>
+                <li><i class="fa fa-check"></i>{% trans "Free Transport" %}</li>
+                <li><i class="fa fa-check"></i>{% trans "24-7 Free consultation" %}</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!-- End of .our-numbers -->

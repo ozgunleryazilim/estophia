@@ -1,0 +1,38 @@
+{% if is_paginated %}
+    <ul class="my-pagination">
+        {% if page_obj.has_previous %}
+            <li class="">
+                <a href="?{{ queries.urlencode }}&amp;page={{ page_obj.previous_page_number }}"
+                   class="bordered">
+                    <span class="fa fa-angle-left"></span>
+                </a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <span class="fa fa-angle-left"></span>
+            </li>
+        {% endif %}
+        {% for i in paginator.page_range %}
+            {% if page_obj.number == i %}
+                <li class="active">
+                    <a href="#">{{ i }}</a>
+                </li>
+            {% else %}
+                <li class="">
+                    <a href="?{{ queries.urlencode }}&amp;page={{ i }}">{{ i }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <li class="">
+                <a href="?{{ queries.urlencode }}&amp;page={{ page_obj.next_page_number }}" class="bordered">
+                    <span class="fa fa-angle-right"></span>
+                </a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <span class="fa fa-angle-right"></span>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
