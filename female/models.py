@@ -128,3 +128,17 @@ class FemaleBlog(base_models.BaseBlog):
 class FemaleBlogComment(base_models.BaseBlogComment):
     gender = "female"
     blog = models.ForeignKey(FemaleBlog, verbose_name=_("Blog"), on_delete=models.CASCADE)
+
+
+class FemaleContactPageSeo(base_models.BaseContactPageSeo):
+    gender = "female"
+    translations = TranslatedFields(
+        **base_models.BaseContactPageSeo.translations
+    )
+
+
+class FemaleKVKKPageSeo(base_models.BaseKVKKPageSeo):
+    gender = "female"
+    translations = TranslatedFields(
+        **base_models.BaseKVKKPageSeo.translations
+    )

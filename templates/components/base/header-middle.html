@@ -7,6 +7,7 @@
 {% url gender|add:':howitworks' as howitworks_url %}
 {% url gender|add:':before_after' as before_after_url %}
 {% url gender|add:':blog_list' as blog_url %}
+{% url gender|add:':contact' as contact_url %}
 
 <!-- Start of .header-middle -->
 <header class="header-middle {{ header_class|default:'header-middle_transparent_pages' }}">
@@ -69,7 +70,7 @@
                     <a class="navbar__menu-link" href="{{ blog_url }}">{% trans "Blog" %}</a>
                 </li>
                 <li class="navbar__menu-item">
-                    <a class="navbar__menu-link" href="{{ about_url }}">{% trans "Contact" %}</a>
+                    <a class="navbar__menu-link" href="{{ contact_url }}">{% trans "Contact" %}</a>
                 </li>
 
             </ul>

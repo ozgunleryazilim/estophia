@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load kvkk %}
+
+{% block meta %}
+    {% get_kvkk_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
+{% block content %}
+
+    {% get_kvkk_seo_obj gender=gender as seo_obj %}
+    {% include "components/banner.html" with obj=seo_obj %}
+
+    <!-- Start of departments-3 -->
+    <section class="departments-3 main-blog">
+        <div class="container container_no-sidebar">
+            <div class="article">
+                <div class="departments-3__single">
+                    {{ seo_obj.content }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of departments-3 -->
+
+{% endblock %}

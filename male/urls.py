@@ -13,4 +13,6 @@ urlpatterns = [
     path(_('before-after/'), views.MaleBeforeAfterListView.as_view(), name="before_after"),
     path(_('blog/'), views.MaleBlogListView.as_view(), name="blog_list"),
     path(_('blog/<slug>/'), views.MaleBlogDetailView.as_view(), name="blog_detail"),
+    path(_('contact/'), views.MaleContactPage.as_view(), name="contact"),
+    path(_('gdpr/'), views.MaleKVKKPage.as_view(), name="kvkk"),
 ]

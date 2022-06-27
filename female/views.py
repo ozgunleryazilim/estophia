@@ -47,3 +47,13 @@ class FemaleBlogDetailView(BaseBlogDetailView):
     gender = "female"
     model = FemaleBlog
     form_class = FemaleBlogCommentForm
+
+
+class FemaleContactPage(GenderedViewMixin, TemplateView):
+    gender = "female"
+    template_name = "pages/contact.html"
+
+
+class FemaleKVKKPage(GenderedViewMixin, TemplateView):
+    gender = "female"
+    template_name = "pages/kvkk.html"

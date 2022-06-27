@@ -5,3 +5,5 @@ from .services import *
 from .howitworks import *
 from .before_after import *
 from .blog import *
+from .contact import *
+from .kvkk import *

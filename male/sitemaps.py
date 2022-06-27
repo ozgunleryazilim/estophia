@@ -11,7 +11,7 @@ class MaleStaticViewSitemap(Sitemap):
     priority = 1.0
 
     def items(self):
-        view_names = ['home', 'about', 'services', 'howitworks', 'before_after', 'blog_list']
+        view_names = ['home', 'about', 'services', 'howitworks', 'before_after', 'blog_list', 'contact', 'kvkk']
         return [f"female:{view_name}" for view_name in view_names]
 
     def location(self, item):

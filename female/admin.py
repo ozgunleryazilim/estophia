@@ -15,6 +15,8 @@ admin.site.register(models.FemaleBeforeAfterPageSeo, base_admin.BaseBeforeAfterP
 admin.site.register(models.FemaleBeforeAfterItem, base_admin.BaseBeforeAfterItemAdmin)
 admin.site.register(models.FemaleBlogsPageSeo, base_admin.BaseBlogsPageSeoAdmin)
 admin.site.register(models.FemaleBlogCategory, base_admin.BaseBlogCategoryAdmin)
+admin.site.register(models.FemaleContactPageSeo, base_admin.BaseContactPageSeoAdmin)
+admin.site.register(models.FemaleKVKKPageSeo, base_admin.BaseKVKKPageSeoAdmin)
 
 
 class BlogCommentInline(admin.StackedInline):

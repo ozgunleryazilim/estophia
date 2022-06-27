@@ -122,3 +122,20 @@ class BaseBlogAdmin(TranslatableAdmin):
         return {
             'slug': ('title',),
         }
+
+
+class BaseContactPageSeoAdmin(TranslatableAdmin):
+    fieldsets = (
+        (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
+    filter_vertical = ('meta_keywords',)
+
+
+class BaseKVKKPageSeoAdmin(TranslatableAdmin):
+    fieldsets = (
+        (_("KVKK Information"), {'fields': ('content',)}),
+        (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
+    filter_vertical = ('meta_keywords',)

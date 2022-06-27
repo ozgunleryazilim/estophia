@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% load contact %}
+
+{% block meta %}
+    {% get_contact_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
+{% block content %}
+
+    {% get_contact_seo_obj gender=gender as obj %}
+    {% include "components/banner.html" with obj=obj %}
+
+    <!-- Start of .shop -->
+    <section class="contact main-blog">
+        <div class="contact-map">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40674.95943414137!2d-74.02830237109018!3d40.73596674750672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a197c06b7cb%3A0x40a06c78f79e5de6!2sOzodlik%20minorasi!5e0!3m2!1suz!2sus!4v1594532528185!5m2!1suz!2sus"
+                    width="100%" height="590px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0">
+            </iframe>
+            <div class="container">
+                <div class="contact-map__card">
+                    <div class="img">
+                        {% if gender == 'male' %}
+                            {% static 'images/male/contact.jpg' as contact_image %}
+                        {% else %}
+                            {% static 'images/female/contact.jpg' as contact_image %}
+                        {% endif %}
+                        <img src="{{ contact_image }}" alt="{% trans 'Estophia Contact' %}">
+                    </div>
+                    <div class="content">
+                        <div class="number">
+                            <a href="tel:{{ global_preferences.common__phone_number }}">
+                                {{ global_preferences.common__phone_number }}
+                            </a>
+                            <a href="tel:{{ global_preferences.common__phone_number2 }}">
+                                {{ global_preferences.common__phone_number2 }}
+                            </a>
+                        </div>
+                        <p class="adress">1560 Holden Street San Diego, CA 92139</p>
+                        <a href="mailto:{{ global_preferences.common__email_address }}" class="email">
+                            {{ global_preferences.common__email_address }}
+                        </a>
+                        <a href="#" class="btn btn-2_pink">{% trans "get appointment" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container_right-sidebar">
+            <div class="article">
+                <h1 class="title">Get in Touch</h1>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12 col-12">
+                            <textarea class="form-control" placeholder="{% trans 'Type your texts' %}"></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" class="form-control" placeholder="{% trans 'Your Name' %}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" placeholder="{% trans 'Email' %}">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-2_pink">{% trans 'Send' %}</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- End of .shop -->
+
+{% endblock %}
