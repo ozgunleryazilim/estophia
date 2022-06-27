@@ -1,4 +1,5 @@
 {% load static i18n %}
+{% load services %}
 
 {% url gender|add:':home' as home_url %}
 {% url gender|add:':about' as about_url %}
@@ -47,37 +48,14 @@
 
                 <li class="navbar__menu-item">
                     <a class="navbar__menu-link" href="{{ services_url }}">{% trans "Services" %}</a>
+                    {% get_home_services gender=gender as home_service_list %}
                     <ul class="navbar__submenu">
-                        <li class="navbar__submenu-item">
-                            <a href="departments-3_column.html" class="navbar__submenu-link">Departments 3
-                                columns</a>
-                        </li>
-
-                        <li class="navbar__submenu-item">
-                            <a href="departments-3_column_icon.html" class="navbar__submenu-link">Departments 3
-                                columns icon</a>
-                        </li>
-
-                        <li class="navbar__submenu-item">
-                            <a href="departments-1_column.html" class="navbar__submenu-link">Departments 1
-                                column</a>
-                        </li>
-
-                        <li class="navbar__submenu-item">
-                            <a href="departments-details_right.html" class="navbar__submenu-link">Department
-                                Details right</a>
-                        </li>
-
-                        <li class="navbar__submenu-item">
-                            <a href="departments-details_left.html" class="navbar__submenu-link">Department
-                                Details left</a>
-                        </li>
-
-                        <li class="navbar__submenu-item">
-                            <a href="departments-details.html" class="navbar__submenu-link">Department
-                                Details</a>
-                        </li>
-
+                        {% for service in home_service_list %}
+                            <li class="navbar__submenu-item">
+                                <a href="{{ service.get_absolute_url }}"
+                                   class="navbar__submenu-link">{{ service.title }}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </li>
 
@@ -109,9 +87,7 @@
                 </div>
 
 
-
                 <a href="#" class="btn btn-secondary" id="popup-form-open">{% trans "MAKE AN APPOINTMENT" %}</a>
-
 
 
             </div>

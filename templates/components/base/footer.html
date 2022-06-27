@@ -1,4 +1,5 @@
 {% load static i18n %}
+{% load services %}
 
 <!-- Start of .footer -->
 <footer class="footer">
@@ -56,24 +57,40 @@
                     </div>
                 </div>
 
+                {% url gender|add:':about' as about_url %}
+                {% url gender|add:':services' as services_url %}
+                {% url gender|add:':howitworks' as howitworks_url %}
+                {% url gender|add:':before_after' as before_after_url %}
+                {% url gender|add:':blog_list' as blog_url %}
+
                 <div class="footer__top-blocks">
                     <h1 class="title">{% trans "SITE MAP" %}</h1>
                     <div class="content site-map">
                         <ul class="menu">
                             <li>
-                                <a href="#about"><i class="fa fa-angle-right"></i>{% trans "About Us" %}</a>
+                                <a href="{{ about_url }}">
+                                    <i class="fa fa-angle-right"></i>{% trans "About Us" %}
+                                </a>
                             </li>
                             <li>
-                                <a href="#departments"><i class="fa fa-angle-right"></i>{% trans "Services" %}</a>
+                                <a href="{{ services_url }}">
+                                    <i class="fa fa-angle-right"></i>{% trans "Services" %}
+                                </a>
                             </li>
                             <li>
-                                <a href="#services"><i class="fa fa-angle-right"></i>{% trans "How it works" %}</a>
+                                <a href="{{ howitworks_url }}">
+                                    <i class="fa fa-angle-right"></i>{% trans "How it works" %}
+                                </a>
                             </li>
                             <li>
-                                <a href="#why-us"><i class="fa fa-angle-right"></i>{% trans "Before & After" %}</a>
+                                <a href="{{ before_after_url }}">
+                                    <i class="fa fa-angle-right"></i>{% trans "Before & After" %}
+                                </a>
                             </li>
                             <li>
-                                <a href="#faq"><i class="fa fa-angle-right"></i>{% trans "Blog" %}</a>
+                                <a href="{{ blog_url }}">
+                                    <i class="fa fa-angle-right"></i>{% trans "Blog" %}
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -83,30 +100,22 @@
             <div>
                 <div class="footer__top-blocks">
                     <h1 class="title">{% trans "Services" %}</h1>
-                    {# TODO Service categories eklenecek... #}
                     <div class="content site-map">
                         <ul class="menu">
+                            {% get_home_services gender=gender as home_service_list %}
+                            {% for service in home_service_list %}
                             <li>
-                                <a href="#about"><i class="fa fa-angle-right"></i>About Us</a>
+                                <a href="{{ service.get_absolute_url }}">
+                                    <i class="fa fa-angle-right"></i>{{ service.title }}
+                                </a>
                             </li>
-                            <li>
-                                <a href="#departments"><i class="fa fa-angle-right"></i>Our Departments</a>
-                            </li>
-                            <li>
-                                <a href="#services"><i class="fa fa-angle-right"></i>Services</a>
-                            </li>
-                            <li>
-                                <a href="#why-us"><i class="fa fa-angle-right"></i>Why Us</a>
-                            </li>
-                            <li>
-                                <a href="#faq"><i class="fa fa-angle-right"></i>FAQ</a>
-                            </li>
+                            {% endfor %}
+
                         </ul>
                     </div>
                 </div>
                 <div class="footer__top-blocks">
                     <h1 class="title">{% trans "Estophia On Map" %}</h1>
-                    {# TODO Service categories eklenecek... #}
                     <div class="content">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.8757030868746!2d28.936250516303705!3d41.006093679300974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba32d8c9fe21%3A0xb227393ddf981c11!2sCerrahpa%C5%9Fa%2C%20Davutpa%C5%9Fa%20Medresesi%20Sk.%208%2C%2034098%20Fatih%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1656220960876!5m2!1str!2str"
                                 height="250" style="border:0;" allowfullscreen="" loading="lazy"
