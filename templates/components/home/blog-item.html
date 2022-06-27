@@ -1,0 +1,14 @@
+{% load i18n %}
+<a href="{{ blog.get_absolute_url }}" class="latest-news__item">
+    <div class="inner-block">
+        <div class="img">
+            <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+            <h1 class="date">{{ blog.created_date|date:"DATE_FORMAT" }}</h1>
+        </div>
+        <h4 class="title">{{ blog.title }}</h4>
+        <div class="text">
+            {{ blog.description|safe }}
+        </div>
+        <span class="read-more-2">{% trans "Read more" %}</span>
+    </div>
+</a>

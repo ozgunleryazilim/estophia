@@ -39,6 +39,16 @@ def get_popular_blogs(gender, number=4):
 
 
 @register.simple_tag
+def get_last_blogs(gender, number=4):
+    models = {
+        "male": MaleBlog,
+        "female": FemaleBlog
+    }
+    model = models.get(gender)
+    return model.objects.order_by('-created_date')[:number]
+
+
+@register.simple_tag
 def get_random_blogs(gender, category=None, blog=None, count=1, single=False, has_image=False):
     models = {
         "male": MaleBlog,
