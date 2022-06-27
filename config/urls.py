@@ -5,10 +5,20 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
 from django.utils.translation import ugettext_lazy as _
+
+from common.sitemaps import CommonStaticViewSitemap
 from config.views import GenderSelectionPage
+from female.sitemaps import FemaleStaticViewSitemap, FemaleServiceSitemap, FemaleBlogSitemap
+from male.sitemaps import MaleBlogSitemap, MaleServiceSitemap, MaleStaticViewSitemap
 
 sitemaps = {
-
+    'common': CommonStaticViewSitemap,
+    'male_static': MaleStaticViewSitemap,
+    'male_services': MaleServiceSitemap,
+    'male_blogs': MaleBlogSitemap,
+    'female_static': FemaleStaticViewSitemap,
+    'female_services': FemaleServiceSitemap,
+    'female_blogs': FemaleBlogSitemap,
 }
 
 urlpatterns = [
@@ -19,12 +29,12 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
-    path('', GenderSelectionPage.as_view(), name='gender_selection'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
+    path('', GenderSelectionPage.as_view(), name='gender_selection'),
     path(_('male/'), include('male.urls', namespace="male")),
     path(_('female/'), include('female.urls', namespace="female")),
 )
