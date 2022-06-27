@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+
+{% block meta %}
+    {% include "components/base/meta.html" with obj=service %}
+{% endblock %}
+
 {% block content %}
 
     {% include "components/banner.html" with obj=service %}

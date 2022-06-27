@@ -2,6 +2,11 @@
 {% load static i18n %}
 {% load blogs %}
 
+{% block meta %}
+    {% get_blogs_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
 {% block content %}
 
     {% get_blogs_seo_obj gender=gender as blogs_page_obj %}

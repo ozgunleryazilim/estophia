@@ -5,9 +5,11 @@
 <head>
     <meta charset="UTF-8">
 
-
-    <title>Ibn Sino Html-5 Template | Home-2</title>
     <link rel="icon" href="{% static 'images/icon.png' %}">
+
+    {% block meta %}
+        {% include "components/base/meta.html" %}
+    {% endblock %}
 
     {% block seo_tags %}
         {% if request.GET.page %}

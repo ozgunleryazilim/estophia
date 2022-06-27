@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load services %}
 
+{% block meta %}
+    {% get_services_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
 {% block content %}
     {% get_services_seo_obj gender=gender as obj %}
     {% include "components/banner.html" with obj=obj %}

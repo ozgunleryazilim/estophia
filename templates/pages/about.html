@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load about %}
 
+{% block meta %}
+    {% get_about_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
 {% block content %}
     {% get_about_seo_obj gender=gender as page_obj %}
     {% include "components/banner.html" with obj=page_obj %}

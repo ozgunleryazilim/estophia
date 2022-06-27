@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load howitworks %}
 
+{% block meta %}
+    {% get_howitworks_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
 {% block content %}
 
     {% get_howitworks_seo_obj gender=gender as howitworks_obj %}

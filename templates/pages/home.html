@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% load home %}
+
+{% block meta %}
+    {% get_home_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
 
 {% block header %}
     {% include "components/base/header-top.html" %}

@@ -2,6 +2,11 @@
 {% load i18n %}
 {% load before_after %}
 
+{% block meta %}
+    {% get_beforeafter_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
 {% block content %}
     {% get_beforeafter_seo_obj gender=gender as obj %}
     {% include "components/banner.html" with obj=obj %}
