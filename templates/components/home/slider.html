@@ -16,7 +16,7 @@
                         {{ slider.title }}
                     </h1>
                     <h4 class="slide-item__subtitle">{{ slider.subtitle|default:"" }}</h4>
-                    <a href="{{ slider.redirect_url }}" class="btn btn_pink">{% trans "Learn More" %}</a>
+                    <a href="{{ slider.redirect_url|default:'' }}" class="btn btn_pink">{% trans "Learn More" %}</a>
                 </div>
             </div>
         </div>
