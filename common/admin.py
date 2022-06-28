@@ -17,7 +17,7 @@ class BaseHomePageSeoAdmin(TranslatableAdmin):
 
 
 class BaseHomeSliderAdmin(TranslatableAdmin):
-    fields = ('title', 'subtitle', 'image')
+    fields = ('title', 'subtitle', 'image', 'redirect_url')
     list_display = ('title',)
 
 

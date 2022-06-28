@@ -22,7 +22,8 @@ class BaseHomeSlider(TranslatableModel):
 
     translations = dict(
         title=models.CharField(max_length=200, verbose_name=_("Title")),
-        subtitle=models.CharField(max_length=200, verbose_name=_("Subtitle"), blank=True, null=True)
+        subtitle=models.CharField(max_length=200, verbose_name=_("Subtitle"), blank=True, null=True),
+        redirect_url=models.CharField(verbose_name=_("Redirect Link"), blank=True, null=True, max_length=500),
     )
     image = models.ImageField(verbose_name=_("Slider Image"), upload_to=f"home/slider/{gender}/")
 
