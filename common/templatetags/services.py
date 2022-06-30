@@ -21,7 +21,7 @@ def get_service_categories(gender, limit=None, in_navbar=False):
         "male": MaleServiceCategory,
         "female": FemaleServiceCategory
     }
-    model = models.get(gender)
+    model = models.get(gender, MaleServiceCategory)
     query = model.objects.all()
     if in_navbar:
         query = query.filter(in_navbar=True)
