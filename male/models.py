@@ -39,11 +39,20 @@ class MaleServicesPageSeo(base_models.BaseServicesPageSeo):
     )
 
 
+class MaleServiceCategory(base_models.BaseServiceCategory):
+    gender = "male"
+    translations = TranslatedFields(
+        **base_models.BaseServiceCategory.translations
+    )
+
+
 class MaleServiceItem(base_models.BaseServiceItem):
     gender = "male"
     translations = TranslatedFields(
         **base_models.BaseServiceItem.translations
     )
+    category = models.ForeignKey(MaleServiceCategory, on_delete=models.SET_NULL, blank=True, null=True,
+                                 verbose_name=_("Category"), related_name="service_items")
 
     @property
     def faq_list(self):

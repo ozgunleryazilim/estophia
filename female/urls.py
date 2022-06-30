@@ -7,6 +7,9 @@ app_name = 'female'
 urlpatterns = [
     path('', views.FemaleHomePage.as_view(), name="home"),
     path(_('about/'), views.FemaleAboutPage.as_view(), name="about"),
+    path(_('service-categories/'), views.FemaleServiceCategoryListView.as_view(), name="service_categories"),
+    path(_('service-categories/<slug>/'), views.FemaleServiceCategoryDetailView.as_view(),
+         name="service_category_detail"),
     path(_('services/'), views.FemaleServicesListView.as_view(), name="services"),
     path(_('services/<slug>/'), views.FemaleServicesDetailView.as_view(), name="services_detail"),
     path(_('howitworks/'), views.FemaleHowitworksPage.as_view(), name="howitworks"),

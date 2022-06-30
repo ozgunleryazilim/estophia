@@ -45,10 +45,28 @@ class BaseServicesPageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
-class BaseServiceItemAdmin(TranslatableAdmin):
+class BaseServiceCategoryAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Content"), {'fields': (
-            'title', 'slug', 'home_description', 'content', 'image', 'in_home', 'order')}),
+            'title', 'slug', 'description', 'image', 'in_navbar', 'order')}),
+        (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
+    filter_vertical = ('meta_keywords',)
+    list_display = ('title', 'slug', 'in_navbar', 'order')
+    list_filter = ('in_navbar',)
+    list_editable = ('in_navbar', 'order')
+
+    def get_prepopulated_fields(self, request, obj=None):
+        return {
+            'slug': ('title',),
+        }
+
+
+class BaseServiceItemAdmin(TranslatableAdmin):
+    fieldsets = (
+        (_("Content"), {'fields': ('category', 'title', 'slug', 'home_description',
+                                   'content', 'image', 'in_home', 'order')}),
         (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
         (_("Seo Information"), {'fields': seo_fields}),
     )

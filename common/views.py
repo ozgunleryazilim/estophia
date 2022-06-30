@@ -9,6 +9,22 @@ from utils.views import PaginatedListViewMixin, GenderedViewMixin, TranslatableD
     DetailListView
 
 
+class BaseServiceCategoryListView(GenderedViewMixin, PaginatedListViewMixin, ListView):
+    paginate_by = 9
+    template_name = "pages/service-categories.html"
+    context_object_name = "categories"
+
+
+class BaseServiceCategoryDetailView(TranslatableDetailViewMixin, DetailListView):
+    paginate_by = 9
+    template_name = "pages/service-category-detail.html"
+    context_object_name = "services"
+    view_url_name = "service_category_detail"
+
+    def get_queryset(self):
+        return self.object.service_items.all()
+
+
 class BaseServicesListView(GenderedViewMixin, PaginatedListViewMixin, ListView):
     template_name = "pages/services.html"
     paginate_by = 9

@@ -3,7 +3,7 @@
 
 {% url gender|add:':home' as home_url %}
 {% url gender|add:':about' as about_url %}
-{% url gender|add:':services' as services_url %}
+{% url gender|add:':service_categories' as services_url %}
 {% url gender|add:':howitworks' as howitworks_url %}
 {% url gender|add:':before_after' as before_after_url %}
 {% url gender|add:':blog_list' as blog_url %}
@@ -49,12 +49,12 @@
 
                 <li class="navbar__menu-item">
                     <a class="navbar__menu-link" href="{{ services_url }}">{% trans "Services" %}</a>
-                    {% get_home_services gender=gender as home_service_list %}
+                    {% get_service_categories gender=gender in_navbar=True as home_service_categories %}
                     <ul class="navbar__submenu">
-                        {% for service in home_service_list %}
+                        {% for category in home_service_categories %}
                             <li class="navbar__submenu-item">
-                                <a href="{{ service.get_absolute_url }}"
-                                   class="navbar__submenu-link">{{ service.title }}</a>
+                                <a href="{{ category.get_absolute_url }}"
+                                   class="navbar__submenu-link">{{ category.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>

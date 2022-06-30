@@ -1,9 +1,9 @@
 from django.views.generic import TemplateView
 
 from common.views import BaseServicesListView, BaseServicesDetailView, BaseBeforeAfterListView, BaseBlogListView, \
-    BaseBlogDetailView
+    BaseBlogDetailView, BaseServiceCategoryListView, BaseServiceCategoryDetailView
 from male.forms import MaleBlogCommentForm
-from male.models import MaleServiceItem, MaleBeforeAfterItem, MaleBlog, MaleBlogCategory
+from male.models import MaleServiceItem, MaleBeforeAfterItem, MaleBlog, MaleBlogCategory, MaleServiceCategory
 from utils.views import GenderedViewMixin
 
 
@@ -15,6 +15,16 @@ class MaleHomePage(GenderedViewMixin, TemplateView):
 class MaleAboutPage(GenderedViewMixin, TemplateView):
     gender = "male"
     template_name = "pages/about.html"
+
+
+class MaleServiceCategoryListView(BaseServiceCategoryListView):
+    gender = "male"
+    model = MaleServiceCategory
+
+
+class MaleServiceCategoryDetailView(BaseServiceCategoryDetailView):
+    gender = "male"
+    model = MaleServiceCategory
 
 
 class MaleServicesListView(BaseServicesListView):

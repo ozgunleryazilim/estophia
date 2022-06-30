@@ -58,7 +58,7 @@
                 </div>
 
                 {% url gender|add:':about' as about_url %}
-                {% url gender|add:':services' as services_url %}
+                {% url gender|add:':service_categories' as services_url %}
                 {% url gender|add:':howitworks' as howitworks_url %}
                 {% url gender|add:':before_after' as before_after_url %}
                 {% url gender|add:':blog_list' as blog_url %}
@@ -102,7 +102,7 @@
                     <h1 class="title">{% trans "Services" %}</h1>
                     <div class="content site-map">
                         <ul class="menu">
-                            {% get_home_services gender=gender as home_service_list %}
+                            {% get_service_categories gender=gender in_navbar=True as home_service_list %}
                             {% for service in home_service_list %}
                             <li>
                                 <a href="{{ service.get_absolute_url }}">

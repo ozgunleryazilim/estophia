@@ -1,7 +1,7 @@
 from django import template
 
-from female.models import FemaleServicesPageSeo, FemaleServiceItem
-from male.models import MaleServicesPageSeo, MaleServiceItem
+from female.models import FemaleServicesPageSeo, FemaleServiceItem, FemaleServiceCategory
+from male.models import MaleServicesPageSeo, MaleServiceItem, MaleServiceCategory
 
 register = template.Library()
 
@@ -16,6 +16,21 @@ def get_services_seo_obj(gender):
 
 
 @register.simple_tag
+def get_service_categories(gender, limit=None, in_navbar=False):
+    models = {
+        "male": MaleServiceCategory,
+        "female": FemaleServiceCategory
+    }
+    model = models.get(gender)
+    query = model.objects.all()
+    if in_navbar:
+        query = query.filter(in_navbar=True)
+    if limit:
+        return query[:limit]
+    return query
+
+
+@register.simple_tag
 def get_services(gender, limit=None):
     models = {
         "male": MaleServiceItem,
@@ -26,7 +41,6 @@ def get_services(gender, limit=None):
     if limit:
         return query[:limit]
     return query
-
 
 @register.simple_tag
 def get_home_services(gender):

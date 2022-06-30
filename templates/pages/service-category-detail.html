@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block meta %}
+    {% include "components/base/meta.html" with obj=object %}
+{% endblock %}
+
+{% block content %}
+    {% include "components/banner.html" with obj=object %}
+
+    <!-- Start of departments-3 -->
+    <section class="departments-3 main-blog">
+        <div class="container mt-5">
+
+            <h1 class="section-title">{{ object.title }}</h1>
+
+            <div class="departments-3__items row pt-3">
+                {% for service in page_obj %}
+                    {% include "components/services/service-item.html" %}
+                {% endfor %}
+            </div>
+            {% include "components/pagination.html" %}
+        </div>
+    </section>
+    <!-- End of departments-3 -->
+
+    <section class="departments-3 main-blog">
+        {% include "components/services/services_form.html" %}
+    </section>
+
+
+{% endblock %}

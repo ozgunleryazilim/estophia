@@ -8,30 +8,33 @@ from django.utils.translation import ugettext_lazy as _
 
 from common.sitemaps import CommonStaticViewSitemap
 from config.views import GenderSelectionPage
-from female.sitemaps import FemaleStaticViewSitemap, FemaleServiceSitemap, FemaleBlogSitemap
-from male.sitemaps import MaleBlogSitemap, MaleServiceSitemap, MaleStaticViewSitemap
+from female.sitemaps import (FemaleStaticViewSitemap, FemaleServiceSitemap, FemaleBlogSitemap,
+                             FemaleServiceCategorySitemap)
+from male.sitemaps import MaleBlogSitemap, MaleServiceSitemap, MaleStaticViewSitemap, MaleServiceCategorySitemap
 
 sitemaps = {
     'common': CommonStaticViewSitemap,
     'male_static': MaleStaticViewSitemap,
+    'male_service_category': MaleServiceCategorySitemap,
     'male_services': MaleServiceSitemap,
     'male_blogs': MaleBlogSitemap,
     'female_static': FemaleStaticViewSitemap,
+    'female_service_category': FemaleServiceCategorySitemap,
     'female_services': FemaleServiceSitemap,
     'female_blogs': FemaleBlogSitemap,
 }
 
 urlpatterns = [
-    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    path('jet/dashboard/', include('jet.dashboard.urls', namespace='jet-dashboard')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('rosetta/', include('rosetta.urls')),
-    path(settings.ADMIN_URL, admin.site.urls),
-    path('i18n/', include('django.conf.urls.i18n')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+                  path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+                  path('jet/dashboard/', include('jet.dashboard.urls', namespace='jet-dashboard')),
+                  path('ckeditor/', include('ckeditor_uploader.urls')),
+                  path('rosetta/', include('rosetta.urls')),
+                  path(settings.ADMIN_URL, admin.site.urls),
+                  path('i18n/', include('django.conf.urls.i18n')),
+                  path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
-  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
     path('', GenderSelectionPage.as_view(), name='gender_selection'),

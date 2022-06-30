@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load services %}
+
+{% block meta %}
+    {% get_services_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
+{% block content %}
+    {% get_services_seo_obj gender=gender as obj %}
+    {% include "components/banner.html" with obj=obj %}
+
+    <!-- Start of departments-3 -->
+    <section class="departments-3 main-blog">
+        <div class="container mt-5">
+
+            <h1 class="section-title">{% trans "Service Categories" %}</h1>
+
+            <div class="departments-3__items row pt-2">
+                {% for category in categories %}
+                    {% include "components/services/service-category-item.html" %}
+                {% endfor %}
+            </div>
+            {% include "components/pagination.html" %}
+        </div>
+    </section>
+    <!-- End of departments-3 -->
+
+    <section class="departments-3 main-blog">
+        {% include "components/services/services_form.html" %}
+    </section>
+
+
+{% endblock %}
