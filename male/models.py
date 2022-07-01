@@ -95,8 +95,17 @@ class MaleBeforeAfterPageSeo(base_models.BaseBeforeAfterPageSeo):
     )
 
 
+class MaleBeforeAfterCategory(base_models.BaseBeforeAfterCategory):
+    gender = "male"
+    translations = TranslatedFields(
+        **base_models.BaseBeforeAfterCategory.translations
+    )
+
+
 class MaleBeforeAfterItem(base_models.BaseBeforeAfterItem):
     gender = "male"
+    category = models.ForeignKey(MaleBeforeAfterCategory, blank=True, null=True, on_delete=models.SET_NULL,
+                                 verbose_name=_("Category"))
 
 
 class MaleBlogsPageSeo(base_models.BaseBlogsPageSeo):

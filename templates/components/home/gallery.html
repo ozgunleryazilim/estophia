@@ -1,30 +1,22 @@
 {% load static %}
+{% load before_after %}
 
 <div class="photogallery mt-3 ">
     <div class="photogallery-blocks row">
-        <a href="{% static 'images/jpg/case13.jpg' %}" data-fancybox="gallery"
-           class="photogallery-item col-12 col-md-3">
-            <span class="h-line"></span>
-            <span class="v-line"></span>
-            <img src="{% static 'images/jpg/case13.jpg' %}" class="w-100">
-        </a>
-        <a href="{% static 'images/jpg/case14.jpg' %}" data-fancybox="gallery"
-           class="photogallery-item col-12 col-md-3">
-            <span class="h-line"></span>
-            <span class="v-line"></span>
-            <img src="{% static 'images/jpg/case14.jpg' %}" class="w-100">
-        </a>
-        <a href="{% static 'images/jpg/case15.jpg' %}" data-fancybox="gallery"
-           class="photogallery-item col-12 col-md-3">
-            <span class="h-line"></span>
-            <span class="v-line"></span>
-            <img src="{% static 'images/jpg/case15.jpg' %}" class="w-100">
-        </a>
-        <a href="{% static 'images/jpg/case15.jpg' %}" data-fancybox="gallery"
-           class="photogallery-item col-12 col-md-3">
-            <span class="h-line"></span>
-            <span class="v-line"></span>
-            <img src="{% static 'images/jpg/case15.jpg' %}" class="w-100">
-        </a>
+        {% get_beforeafter_items gender=gender in_home=True number=4 as before_after_items %}
+        {% for beforeafter in before_after_items %}
+            <a
+                    {% if beforeafter.video %}
+                        href="{{ beforeafter.video.url }}"
+                    {% else %}
+                        href="{{ beforeafter.image.url }}"
+                    {% endif %}
+                        data-fancybox="gallery"
+                        class="photogallery-item col-12 col-md-3">
+                <span class="h-line"></span>
+                <span class="v-line"></span>
+                <img src="{{ beforeafter.image.url }}" class="w-100" alt="Estophia before & after">
+            </a>
+        {% endfor %}
     </div>
 </div>

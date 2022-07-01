@@ -107,8 +107,29 @@ class BaseBeforeAfterPageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
+class BaseBeforeAfterCategoryAdmin(TranslatableAdmin):
+    fieldsets = (
+        (_("Content"), {'fields': (
+            'title', 'slug', 'description', 'image', 'in_navbar', 'order')}),
+        (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
+    filter_vertical = ('meta_keywords',)
+    list_display = ('title', 'slug', 'in_navbar', 'order')
+    list_filter = ('in_navbar',)
+    list_editable = ('in_navbar', 'order')
+
+    def get_prepopulated_fields(self, request, obj=None):
+        return {
+            'slug': ('title',),
+        }
+
+
 class BaseBeforeAfterItemAdmin(admin.ModelAdmin):
-    fields = ('image', 'video')
+    fields = ('image', 'video', 'category', 'in_home')
+    list_display = ('id', 'category', 'in_home')
+    list_editable = ('category', 'in_home')
+    list_filter = ('category', 'in_home')
 
 
 class BaseBlogsPageSeoAdmin(TranslatableAdmin):

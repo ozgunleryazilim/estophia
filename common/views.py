@@ -37,7 +37,7 @@ class BaseServicesDetailView(TranslatableDetailViewMixin, DetailView):
     view_url_name = "services_detail"
 
 
-class BaseBeforeAfterListView(GenderedViewMixin, PaginatedListViewMixin, ListView):
+class BaseBeforeAfterListView(GenderedViewMixin, PaginatedListViewMixin, CategoriedListView):
     template_name = "pages/before_after.html"
     paginate_by = 9
     context_object_name = "beforeafter_list"

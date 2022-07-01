@@ -4,7 +4,7 @@ from common.views import BaseServicesListView, BaseServicesDetailView, BaseBefor
     BaseBlogDetailView, BaseServiceCategoryListView, BaseServiceCategoryDetailView
 from female.forms import FemaleBlogCommentForm
 from female.models import (FemaleServiceItem, FemaleBeforeAfterItem, FemaleBlog, FemaleBlogCategory,
-                           FemaleServiceCategory)
+                           FemaleServiceCategory, FemaleBeforeAfterCategory)
 from utils.views import GenderedViewMixin
 
 
@@ -46,6 +46,7 @@ class FemaleHowitworksPage(GenderedViewMixin, TemplateView):
 class FemaleBeforeAfterListView(BaseBeforeAfterListView):
     gender = "female"
     model = FemaleBeforeAfterItem
+    category_model = FemaleBeforeAfterCategory
 
 
 class FemaleBlogListView(BaseBlogListView):

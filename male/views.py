@@ -3,7 +3,8 @@ from django.views.generic import TemplateView
 from common.views import BaseServicesListView, BaseServicesDetailView, BaseBeforeAfterListView, BaseBlogListView, \
     BaseBlogDetailView, BaseServiceCategoryListView, BaseServiceCategoryDetailView
 from male.forms import MaleBlogCommentForm
-from male.models import MaleServiceItem, MaleBeforeAfterItem, MaleBlog, MaleBlogCategory, MaleServiceCategory
+from male.models import MaleServiceItem, MaleBeforeAfterItem, MaleBlog, MaleBlogCategory, MaleServiceCategory, \
+    MaleBeforeAfterCategory
 from utils.views import GenderedViewMixin
 
 
@@ -45,6 +46,7 @@ class MaleHowitworksPage(GenderedViewMixin, TemplateView):
 class MaleBeforeAfterListView(BaseBeforeAfterListView):
     gender = "male"
     model = MaleBeforeAfterItem
+    category_model = MaleBeforeAfterCategory
 
 
 class MaleBlogListView(BaseBlogListView):

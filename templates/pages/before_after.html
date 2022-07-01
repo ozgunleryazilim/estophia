@@ -11,9 +11,18 @@
     {% get_beforeafter_seo_obj gender=gender as obj %}
     {% include "components/banner.html" with obj=obj %}
 
-    <!-- Start of departments-3 -->
-    <section class="departments-3 main-blog">
-        <div class="container pt-5">
+    <!-- Start of .latest-news-4 -->
+    <section class="latest-news-4 mian-blog">
+        <div class="container container_right-sidebar">
+            <div class="sidebar">
+                <div class="blog-sidebar">
+                    {% include "components/beforeafter/categories.html" %}
+
+                </div>
+            </div>
+            <div class="article">
+
+                <div class="container pt-5">
 
             <h1 class="section-title m-auto">
                 {% blocktrans trimmed %}
@@ -21,13 +30,20 @@
                 {% endblocktrans %}
             </h1>
 
-            <div class="departments-3__items row pt-2">
+            <div class="departments-3__items row pt-2 align-items-center">
                 {% for beforeafter in beforeafter_list %}
                     {% include "components/beforeafter/beforeafter-item.html" %}
                 {% endfor %}
             </div>
             {% include "components/pagination.html" %}
         </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start of departments-3 -->
+    <section class="departments-3 main-blog">
+
     </section>
     <!-- End of departments-3 -->
 
