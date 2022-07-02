@@ -1,10 +1,57 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n static %}
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'css/gender_selection.css' %}">
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-white gender-navbar">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-facebook-f"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+            </ul>
+            <a class="navbar-brand m-auto" href="#"><img src="{% static 'images/logo_black.png' %}" alt="Estophia"></a>
+            <ul class="navbar-nav">
+                {% include "components/gender_selection/setlang-form.html" %}
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block content %}
 
-    <div class="container my-5 justify-content-center">
-        <a href="{% url 'male:home' %}" class="btn btn_blue">{% trans "Male" %}</a>
-        <a href="{% url 'female:home' %}" class="btn btn-2_pink">{% trans "Female" %}</a>
+    <div class="gender-container container justify-content-center m-auto row my-5">
+        <a href="{% url 'female:home' %}" class="gender-item col-12 col-md-6 my-2">
+            <img src="{% static 'images/female_gender.jpg' %}" alt="Female">
+            <div class="text-container">
+                <p class="text-click-link"><span>
+                    {% trans "CLICK HERE FOR" %}
+                </span></p>
+                <p class="text-gender pink">{% trans "WOMAN" %}</p>
+                <p class="text-aesthetic">{% trans "AESTHETIC" %}</p>
+            </div>
+        </a>
+
+        <a href="{% url 'male:home' %}" class="gender-item col-12 col-md-6 my-2">
+            <img src="{% static 'images/male_gender.jpg' %}" alt="MAle">
+            <div class="text-container">
+                <p class="text-click-link"><span>
+                    {% trans "CLICK HERE FOR" %}
+                </span></p>
+                <p class="text-gender blue">{% trans "MAN" %}</p>
+                <p class="text-aesthetic">{% trans "AESTHETIC" %}</p>
+            </div>
+        </a>
+
     </div>
 
 {% endblock %}
