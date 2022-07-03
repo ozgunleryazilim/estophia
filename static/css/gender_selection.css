@@ -4,6 +4,9 @@
 .gender-navbar .nav-item .nav-link {
   color: black;
 }
+.gender-navbar .navbar-brand img {
+  width: 100px;
+}
 
 .gender-container .gender-item {
   position: relative;
@@ -36,7 +39,7 @@
 }
 .text-click-link span {
   background-color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 0.5rem 0.5rem 0;
   border-radius: 0.8rem;
   font-weight: bold;
@@ -44,7 +47,7 @@
 }
 
 .text-gender {
-  font-size: 6.4rem;
+  font-size: 4.5rem;
   font-weight: bold;
 }
 .text-gender.pink {
@@ -55,19 +58,11 @@
 }
 
 .text-aesthetic {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   letter-spacing: 0.3rem;
 }
 
-@media (min-width: 576px) {
-  .gender-navbar {
-    padding: 20px;
-  }
-  .gender-navbar .nav-item .nav-link {
-    color: black;
-  }
-}
 @media (min-width: 768px) {
   .text-click-link span {
     font-size: 1.7rem;
@@ -81,6 +76,10 @@
   .text-aesthetic {
     font-size: 3rem;
     letter-spacing: 0.3rem;
+  }
+
+  .gender-navbar .navbar-brand img {
+    width: 150px;
   }
 }
 @media (min-width: 992px) {

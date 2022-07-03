@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block header %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-white gender-navbar">
+    <nav class="navbar navbar-expand navbar-light bg-white gender-navbar">
         <div class="container">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -31,7 +31,10 @@
 
     <div class="gender-container container justify-content-center m-auto row my-5">
         <a href="{% url 'female:home' %}" class="gender-item col-12 col-md-6 my-2">
-            <img src="{% static 'images/female_gender.jpg' %}" alt="Female">
+            <img src="{% static 'images/gender_selection/female.jpg' %}" alt="Female"
+                class="gender_img d-none d-md-block">
+            <img src="{% static 'images/gender_selection/female_mobile.png' %}" alt="Female"
+                class="gender_img d-block d-md-none">
             <div class="text-container">
                 <p class="text-click-link"><span>
                     {% trans "CLICK HERE FOR" %}
@@ -42,7 +45,10 @@
         </a>
 
         <a href="{% url 'male:home' %}" class="gender-item col-12 col-md-6 my-2">
-            <img src="{% static 'images/male_gender.jpg' %}" alt="MAle">
+            <img src="{% static 'images/gender_selection/male.jpg' %}" alt="MAle"
+                class="gender_img d-none d-md-block">
+            <img src="{% static 'images/gender_selection/male_mobile.png' %}" alt="MAle"
+                 class="gender_img-mobile d-block d-md-none">
             <div class="text-container">
                 <p class="text-click-link"><span>
                     {% trans "CLICK HERE FOR" %}
@@ -53,7 +59,6 @@
         </a>
 
     </div>
-
 {% endblock %}
 
 {% block post_content %}

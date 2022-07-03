@@ -6,6 +6,10 @@
     .nav-item .nav-link {
         color: black;
     }
+
+    .navbar-brand img {
+        width: 100px;
+    }
 }
 
 .gender-container {
@@ -47,7 +51,7 @@
 .text-click-link {
     span {
         background-color: white;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: 0.5rem 0.5rem 0;
         border-radius: .8rem;
         font-weight: bold;
@@ -59,7 +63,7 @@
 }
 
 .text-gender {
-    font-size: 6.4rem;
+    font-size: 4.5rem;
     font-weight: bold;
 
     &.pink {
@@ -72,21 +76,13 @@
 }
 
 .text-aesthetic {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     letter-spacing: .3rem;
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .gender-navbar {
-    padding: 20px;
-
-    .nav-item .nav-link {
-        color: black;
-    }
-
-}
 
 
 }
@@ -104,6 +100,12 @@
     .text-aesthetic {
         font-size: 3rem;
         letter-spacing: .3rem;
+    }
+
+    .gender-navbar {
+        .navbar-brand img {
+            width: 150px;
+        }
     }
 
 }
