@@ -130,7 +130,7 @@
 
                 &:hover {
                     & > .navbar__menu-link {
-                        color: $primary-pink-2 !important;
+                        //color: $primary-pink-2 !important;
                     }
 
                     & > .navbar__submenu {
@@ -159,7 +159,7 @@
                     opacity: 0;
                     transition: all 0.3s ease;
                     border-bottom: 3px solid transparent;
-                    border-bottom-color: $primary-pink-2;
+                    border-bottom-color: $light-text-col;
                 }
 
                 &.active {
@@ -167,7 +167,7 @@
                 }
 
                 &:hover {
-                    color: $primary-pink-2 !important;
+                    //color: $primary-pink-2 !important;
 
                     &:after {
                         opacity: 1;

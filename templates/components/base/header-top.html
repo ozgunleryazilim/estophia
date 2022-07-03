@@ -2,14 +2,14 @@
 
 <!-- Start of .header-top -->
 
-
+{% url 'gender_selection' as gender_selection_url %}
 
 <header class="header-top">
     <div class="container">
 
         <!-- header-top__logo -->
         <div class="header-top__logo">
-            <a href="{{ home_url }}">
+            <a href="{{ gender_selection_url }}">
                 <img src="{% static 'images/logo.png' %}" alt="Estophia" width="116.09" height="39">
             </a>
         </div>

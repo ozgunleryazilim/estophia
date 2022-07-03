@@ -123,7 +123,7 @@ These are css styles, others're attached
   background-color: #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f22283;
+  background-color: #2e4899;
 }
 
 .page {
@@ -150,7 +150,7 @@ label {
 }
 
 ::selection {
-  background-color: #f22283;
+  background-color: #2e4899;
   color: #ffffff;
 }
 
@@ -167,7 +167,7 @@ ol {
 .section-title {
   text-transform: uppercase;
   font-family: "BebasNeueBold";
-  color: #f22283;
+  color: #2e4899;
   font-size: 80px;
   line-height: 0.8;
   letter-spacing: -1.6px;
@@ -212,7 +212,7 @@ a:hover {
 }
 .read-more-2:active,
 .read-more:active {
-  color: #f22283;
+  color: #2e4899;
 }
 .read-more-2:hover,
 .read-more:hover {
@@ -224,7 +224,7 @@ a:hover {
   letter-spacing: 0;
   text-transform: capitalize;
   font-weight: 700;
-  color: #f22283 !important;
+  color: #2e4899 !important;
 }
 .read-more-2.read-more_pink > .fa,
 .read-more.read-more_pink > .fa {
@@ -241,7 +241,7 @@ a:hover {
 
 .read-more-2:hover {
   text-decoration: none !important;
-  color: #f22283;
+  color: #2e4899;
 }
 
 @media (max-width: 767.98px) {
@@ -257,7 +257,7 @@ a:hover {
 /* svg icons */
 /**************************************************/
 .cls-1 {
-  fill: #f22283;
+  fill: #2e4899;
   fill-rule: evenodd;
 }
 
@@ -302,7 +302,7 @@ a:hover {
 .btn_pink, .btn-2_pink {
   padding: 20px 26px 20px 27px;
   box-sizing: border-box;
-  background-color: #f22283;
+  background-color: #2e4899;
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -317,11 +317,11 @@ a:hover {
   color: #ffffff;
 }
 .btn_outline_primary:hover {
-  background-color: #f22283;
+  background-color: #2e4899;
   color: #ffffff;
 }
 .btn_primary {
-  background-color: #f22283;
+  background-color: #2e4899;
   color: #ffffff;
 }
 .btn_primary:hover {
@@ -337,7 +337,7 @@ a:hover {
   position: relative;
 }
 .btn_blue:hover {
-  background-color: #f22283;
+  background-color: #2e4899;
   color: #ffffff;
 }
 .btn_blue:active {
@@ -359,13 +359,13 @@ a:hover {
   background-color: #000000;
 }
 .btn-2_blue:hover {
-  background-color: #f22283;
-  box-shadow: 8px 18px 30px rgba(242, 34, 131, 0.2) !important;
+  background-color: #2e4899;
+  box-shadow: 8px 18px 30px rgba(46, 72, 153, 0.2) !important;
   color: #ffffff;
 }
 .btn-2_pink {
   padding: 25px 40px;
-  box-shadow: 8px 18px 30px rgba(242, 34, 131, 0.2) !important;
+  box-shadow: 8px 18px 30px rgba(46, 72, 153, 0.2) !important;
 }
 .btn-2 > .fa {
   margin-left: 10px;
@@ -415,7 +415,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 35px;
-  background-color: #f22283;
+  background-color: #2e4899;
   border: 2px solid transparent;
   transition: all 0.3s linear;
 }
@@ -429,18 +429,18 @@ a:hover {
   transition: all 0.3s linear;
 }
 .btn-video-outer > .btn-video > .btn-play {
-  color: #f22283;
+  color: #2e4899;
   margin: 0;
   margin-right: 25px;
   margin-left: -15px;
   padding: 20px;
 }
 .btn-video-outer:hover {
-  border-color: #f22283;
+  border-color: #2e4899;
   background-color: #ffffff;
 }
 .btn-video-outer:hover > .btn-video {
-  color: #f22283;
+  color: #2e4899;
 }
 .btn-video > .btn-play {
   margin-bottom: -10px;
@@ -484,10 +484,10 @@ a:hover {
 }
 @keyframes animatePinkShadow {
   from {
-    box-shadow: 0 0 0 0 rgba(242, 34, 131, 0.48);
+    box-shadow: 0 0 0 0 rgba(46, 72, 153, 0.48);
   }
   to {
-    box-shadow: 8.135px 18.271px 51px 0px rgba(242, 34, 131, 0.48);
+    box-shadow: 8.135px 18.271px 51px 0px rgba(46, 72, 153, 0.48);
   }
 }
 @keyframes animateBlueShadow {
@@ -534,8 +534,8 @@ a:hover {
   width: 146px;
   height: 146px;
   border-radius: 50%;
-  background-color: #f22283;
-  box-shadow: 20px 20px 51px rgba(242, 34, 131, 0.48);
+  background-color: #2e4899;
+  box-shadow: 20px 20px 51px rgba(46, 72, 153, 0.48);
   animation: 1s animatePinkShadow linear alternate-reverse infinite;
 }
 
@@ -545,7 +545,7 @@ a:hover {
 .to-top {
   display: none;
   border-radius: 8px;
-  background-color: #f22283;
+  background-color: #2e4899;
   box-shadow: 8.135px 18.271px 51px 0px rgba(31, 61, 157, 0.4);
   position: fixed;
   right: 80px;
@@ -566,8 +566,8 @@ a:hover {
   font-size: 24px;
 }
 .to-top:hover {
-  background-color: #f22283;
-  box-shadow: 8.135px 18.271px 51px 0px rgba(242, 34, 131, 0.4);
+  background-color: #2e4899;
+  box-shadow: 8.135px 18.271px 51px 0px rgba(46, 72, 153, 0.4);
 }
 
 @media only screen and (max-width: 1199.98px) {
@@ -3645,7 +3645,7 @@ a:hover {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: linear-gradient(45deg, transparent, transparent 40%, #f22283);
+  background: linear-gradient(45deg, transparent, transparent 40%, #2e4899);
   animation: animateLoader 2s infinite linear;
 }
 
@@ -3676,7 +3676,7 @@ a:hover {
   top: 0px;
   bottom: 0px;
   right: 0px;
-  background: linear-gradient(45deg, transparent, transparent 40%, #f22283);
+  background: linear-gradient(45deg, transparent, transparent 40%, #2e4899);
   border-radius: 50%;
   z-index: 1000;
   z-index: 1;
@@ -3690,7 +3690,7 @@ a:hover {
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  color: #f22283;
+  color: #2e4899;
 }
 
 @keyframes animatePreloaderText {
@@ -3698,7 +3698,7 @@ a:hover {
     text-shadow: 0;
   }
   50% {
-    text-shadow: 0 0 20px #f22283;
+    text-shadow: 0 0 20px #2e4899;
   }
   100% {
     text-shadow: 0;
@@ -4049,7 +4049,7 @@ a:hover {
   color: #333333;
 }
 .my-pagination > li > a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .my-pagination > li > span, .my-pagination > li > a.bordered {
   line-height: 48px;
@@ -4068,7 +4068,7 @@ a:hover {
   color: #333333;
 }
 .my-pagination > li.active > a {
-  color: #f22283;
+  color: #2e4899;
 }
 
 @media (max-width: 575.98px) {
@@ -4151,7 +4151,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 .my-pagination-2 > li > .link-center:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .my-pagination-2 > li > a:not(.link-center) {
   padding: 0 25px;
@@ -4397,7 +4397,7 @@ a:hover {
   border-bottom-color: #ffffff;
 }
 .header-middle .navbar__menu-link.active {
-  color: #f22283 !important;
+  color: #2e4899 !important;
 }
 .header-middle .navbar__menu-link:hover:after {
   opacity: 1;
@@ -4435,7 +4435,7 @@ a:hover {
   position: relative;
 }
 .header-middle .navbar__submenu-link:hover {
-  background-color: #f22283;
+  background-color: #2e4899;
   text-indent: 18px;
   color: #ffffff;
 }
@@ -4470,7 +4470,7 @@ a:hover {
   transition: 0.3s ease;
 }
 .header-middle .navbar__search svg:hover > path {
-  fill: #f22283 !important;
+  fill: #2e4899 !important;
 }
 .header-middle .navbar__bag {
   position: relative;
@@ -4532,7 +4532,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 .header-middle .navbar__bag > .checkBox > .products > .products-item > .fa-remove:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .header-middle .navbar__bag > .checkBox > .products-total {
   padding-bottom: 20px;
@@ -4565,7 +4565,7 @@ a:hover {
   transition: 0.3s ease;
 }
 .header-middle .navbar__bag > svg:hover > path {
-  fill: #f22283 !important;
+  fill: #2e4899 !important;
 }
 .header-middle .navbar__bag-count {
   position: absolute;
@@ -4573,7 +4573,7 @@ a:hover {
   left: 19px;
   padding: 4px;
   font-size: 8px;
-  background-color: #f22283;
+  background-color: #2e4899;
   border-radius: 50%;
   color: #ffffff;
 }
@@ -4651,7 +4651,7 @@ a:hover {
 .header-bottom__banner .slide-item__title span {
   font-weight: 900;
   font-family: "BebasNeue";
-  color: #f22283;
+  color: #2e4899;
 }
 .header-bottom__banner .slide-item__subtitle {
   margin-top: 22px;
@@ -4688,7 +4688,7 @@ a:hover {
 .header-bottom__banner .owl-dots .owl-dot.active span {
   width: 47px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 .header-bottom__banner-2 {
   position: absolute;
@@ -4857,7 +4857,7 @@ a:hover {
 }
 .services__item:hover {
   margin-top: 0px;
-  background-color: #f22283;
+  background-color: #2e4899;
 }
 .services__item-icon {
   margin-top: 3px;
@@ -4939,7 +4939,7 @@ a:hover {
 .services .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -5161,7 +5161,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #f22283;
+  background-color: #2e4899;
   font-family: "BebasNeueBold";
   font-size: 48px;
   color: #ffffff;
@@ -5175,7 +5175,7 @@ a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(242, 34, 131, 0.4);
+  background-color: rgba(46, 72, 153, 0.4);
   width: 126%;
   height: 126%;
   z-index: -1;
@@ -5258,7 +5258,7 @@ a:hover {
 .appointments .container .company-numbers__item > .number {
   border-radius: 8px;
   color: #ffffff;
-  background-color: #f22283;
+  background-color: #2e4899;
   width: 132px;
   min-width: 132px;
   height: 87px;
@@ -5363,8 +5363,8 @@ a:hover {
   box-shadow: 9.548px 10.239px 35px rgba(0, 0, 0, 0.06);
 }
 .other-services__cards > .card-item:hover {
-  border-color: #f22283;
-  box-shadow: 15.657px 23.213px 51px rgba(242, 34, 131, 0.2);
+  border-color: #2e4899;
+  box-shadow: 15.657px 23.213px 51px rgba(46, 72, 153, 0.2);
 }
 .other-services__cards > .card-item > .title {
   margin-top: 30px;
@@ -5492,7 +5492,7 @@ a:hover {
   background-image: linear-gradient(to top right, #fff, #fff);
 }
 .form__block textarea:focus, .form__block-input:focus {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .form__block textarea::placeholder, .form__block-input::placeholder {
   color: #cccccc;
@@ -5564,7 +5564,7 @@ a:hover {
   font-family: "Roboto Bold";
   margin-right: 10px;
   font-weight: 900;
-  color: #f22283;
+  color: #2e4899;
 }
 .faq__content .accardion__item-title .fa {
   position: absolute;
@@ -5580,7 +5580,7 @@ a:hover {
   letter-spacing: -0.5px;
 }
 .faq__content .accardion__item:nth-child(2) {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .faq__content .accardion__item:nth-child(2) .accardion__item-text {
   display: block;
@@ -5699,7 +5699,7 @@ a:hover {
 .testimonials__content-carousel .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -5727,7 +5727,7 @@ a:hover {
   align-items: center;
 }
 .emergency-call .container > .call > .icon {
-  background-color: #f22283;
+  background-color: #2e4899;
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -5737,7 +5737,7 @@ a:hover {
   justify-content: center;
   position: relative;
   z-index: 1;
-  box-shadow: 8.135px 18.271px 51px 0px rgba(242, 34, 131, 0.5);
+  box-shadow: 8.135px 18.271px 51px 0px rgba(46, 72, 153, 0.5);
 }
 .emergency-call .container > .call > .icon:before {
   content: "";
@@ -5747,13 +5747,13 @@ a:hover {
   transform: translate(-50%, -50%);
   width: 72px;
   height: 72px;
-  background-color: rgba(242, 34, 131, 0.4);
+  background-color: rgba(46, 72, 153, 0.4);
   border-radius: 50%;
   z-index: -1;
 }
 .emergency-call .container > .call > a {
   font-family: "BebasNeueBold";
-  color: #f22283;
+  color: #2e4899;
   font-size: 64px;
 }
 .emergency-call__items {
@@ -5904,7 +5904,7 @@ a:hover {
 .specialists__carousel .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 .specialists__item {
   padding-bottom: 90px;
@@ -6057,7 +6057,7 @@ a:hover {
 .latest-news__carousel .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 .latest-news__item {
   padding-bottom: 50px;
@@ -6181,7 +6181,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .footer .container > div > .footer__top-blocks a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .footer .container > div > .footer__top-blocks > .title {
   margin-left: 1px;
@@ -6277,7 +6277,7 @@ a:hover {
   font-size: 17px;
 }
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input:hover, .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input:focus, .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form input:active {
-  outline: 1px solid #f22283;
+  outline: 1px solid #2e4899;
 }
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content form button {
   cursor: pointer;
@@ -6287,7 +6287,7 @@ a:hover {
   top: 1px;
   right: 1px;
   border-radius: 8px;
-  background-color: #f22283;
+  background-color: #2e4899;
   outline: none;
   border: none;
 }
@@ -6319,7 +6319,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .footer .container > div:last-child > .footer__top-blocks:nth-child(1) .content .socials > a .fa:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .footer .container > div:last-child > .footer__top-blocks:nth-child(2) .content .menu {
   padding-top: 2px;
@@ -6385,7 +6385,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(242, 34, 131, 0.5);
+  background-color: rgba(46, 72, 153, 0.5);
 }
 .header-bottom-2__banner .slide-item > img {
   position: absolute;
@@ -6580,7 +6580,7 @@ a:hover {
 }
 .header-bottom-2 > .container .benefits-form__form form .input-box:focus {
   background: #fff;
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 
 /**************************************************/
@@ -6889,7 +6889,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .other-services-2__card > .content .owl-nav button:hover {
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
   opacity: 1 !important;
 }
 .other-services-2__card > .content .owl-nav button span {
@@ -6901,7 +6901,7 @@ a:hover {
   background-color: #262626 !important;
 }
 .other-services-2__card > .content .owl-nav button:last-child:hover {
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
   opacity: 1 !important;
 }
 .other-services-2__card > .content > .btn {
@@ -6975,7 +6975,7 @@ a:hover {
 .appointments-2 .container .company-numbers__item > .number {
   border-radius: 8px;
   color: #ffffff;
-  background-color: #f22283;
+  background-color: #2e4899;
   width: 132px;
   min-width: 132px;
   height: 87px;
@@ -7050,7 +7050,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #f22283;
+  background-color: #2e4899;
   font-family: "BebasNeueBold";
   font-size: 48px;
   color: #ffffff;
@@ -7064,7 +7064,7 @@ a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(242, 34, 131, 0.4);
+  background-color: rgba(46, 72, 153, 0.4);
   width: 126%;
   height: 126%;
   z-index: -1;
@@ -7089,7 +7089,7 @@ a:hover {
   align-items: center;
 }
 .why-choose-us-2 .call > .icon {
-  background-color: #f22283;
+  background-color: #2e4899;
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -7099,7 +7099,7 @@ a:hover {
   justify-content: center;
   position: relative;
   z-index: 1;
-  box-shadow: 8.135px 18.271px 51px 0px rgba(242, 34, 131, 0.5);
+  box-shadow: 8.135px 18.271px 51px 0px rgba(46, 72, 153, 0.5);
 }
 .why-choose-us-2 .call > .icon:before {
   content: "";
@@ -7109,13 +7109,13 @@ a:hover {
   transform: translate(-50%, -50%);
   width: 72px;
   height: 72px;
-  background-color: rgba(242, 34, 131, 0.4);
+  background-color: rgba(46, 72, 153, 0.4);
   border-radius: 50%;
   z-index: -1;
 }
 .why-choose-us-2 .call > a {
   font-family: "BebasNeueBold";
-  color: #f22283;
+  color: #2e4899;
   font-size: 64px;
 }
 
@@ -7300,7 +7300,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .specialists-2 > .container > .specialists-2__card .specialists-2__carousel-item > .content table > tbody tr > td a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .specialists-2 > .container > .specialists-2__card .specialists-2__carousel-item > .content table > tbody tr > td table {
   width: 100%;
@@ -7336,7 +7336,7 @@ a:hover {
 .specialists-2 > .container > .specialists-2__card .specialists-2__carousel > .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -7622,7 +7622,7 @@ a:hover {
 .latest-news-2__carousel > .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -7665,7 +7665,7 @@ a:hover {
   align-items: center;
 }
 .emergency-call-2 > .container > .call > .icon {
-  background-color: #f22283;
+  background-color: #2e4899;
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -7675,7 +7675,7 @@ a:hover {
   justify-content: center;
   position: relative;
   z-index: 1;
-  box-shadow: 8.135px 18.271px 51px 0px rgba(242, 34, 131, 0.5);
+  box-shadow: 8.135px 18.271px 51px 0px rgba(46, 72, 153, 0.5);
   animation: 1s animatePinkShadow linear alternate-reverse infinite;
 }
 .emergency-call-2 > .container > .call > .icon:before {
@@ -7686,7 +7686,7 @@ a:hover {
   transform: translate(-50%, -50%);
   width: 72px;
   height: 72px;
-  background-color: rgba(242, 34, 131, 0.4);
+  background-color: rgba(46, 72, 153, 0.4);
   border-radius: 50%;
   z-index: -1;
 }
@@ -7767,7 +7767,7 @@ a:hover {
 .header-bottom-3__banner .slide-item__title span {
   font-weight: 900;
   font-family: "BebasNeue";
-  color: #f22283;
+  color: #2e4899;
 }
 .header-bottom-3__banner .slide-item__subtitle {
   margin-top: 22px;
@@ -7850,8 +7850,8 @@ a:hover {
   color: #ffffff;
 }
 .header-bottom-3__banner .owl-nav button:hover:first-child, .header-bottom-3__banner .owl-nav button:hover:last-child {
-  border-color: #f22283 !important;
-  background-color: #f22283;
+  border-color: #2e4899 !important;
+  background-color: #2e4899;
 }
 .header-bottom-3__banner .owl-nav button:hover:first-child span, .header-bottom-3__banner .owl-nav button:hover:last-child span {
   color: #ffffff;
@@ -7870,7 +7870,7 @@ a:hover {
 .header-bottom-3__banner .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -7979,7 +7979,7 @@ a:hover {
 .our-departments-2 .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -8200,8 +8200,8 @@ a:hover {
   box-shadow: 9.548px 10.239px 35px rgba(0, 0, 0, 0.06);
 }
 .other-services-3__cards > .card-item:hover {
-  border-color: #f22283;
-  box-shadow: 15.657px 23.213px 51px rgba(242, 34, 131, 0.2);
+  border-color: #2e4899;
+  box-shadow: 15.657px 23.213px 51px rgba(46, 72, 153, 0.2);
 }
 .other-services-3__cards > .card-item > .title {
   margin-top: 30px;
@@ -8319,7 +8319,7 @@ a:hover {
 .specialists-3__carousel .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 .specialists-3__item {
   padding-bottom: 90px;
@@ -8525,7 +8525,7 @@ a:hover {
 .latest-news-3__carousel > .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -8726,7 +8726,7 @@ a:hover {
   margin-bottom: 50px;
 }
 .our-clients-2__carousel .slide-item__text > .section-title > span {
-  color: #f22283;
+  color: #2e4899;
 }
 .our-clients-2__carousel .slide-item__text > .text {
   color: #ffffff;
@@ -8818,8 +8818,8 @@ a:hover {
   color: #000000;
 }
 .our-clients-2__carousel > .owl-nav button:hover:first-child, .our-clients-2__carousel > .owl-nav button:hover:last-child {
-  border-color: #f22283 !important;
-  background-color: #f22283;
+  border-color: #2e4899 !important;
+  background-color: #2e4899;
 }
 .our-clients-2__carousel > .owl-nav button:hover:first-child span, .our-clients-2__carousel > .owl-nav button:hover:last-child span {
   color: #ffffff;
@@ -8839,7 +8839,7 @@ a:hover {
 .our-clients-2__carousel > .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 
 /**************************************************/
@@ -8918,7 +8918,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .header-bottom-4 > .container > .breadcrumb > .breadcrumb-item a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .header-bottom-4 > .container > .breadcrumb > .breadcrumb-item.active {
   color: #333333;
@@ -9168,7 +9168,7 @@ a:hover {
   background-image: linear-gradient(to top right, #fff, #fff);
 }
 .form-2__block textarea:focus, .form-2__block-input:focus {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .form-2__block > form {
   margin-left: -1px;
@@ -9482,7 +9482,7 @@ a:hover {
   margin-right: 0;
 }
 .latest-news-4 > .container_left-sidebar > .article > .single-card > .share > a:hover, .latest-news-4 > .container_right-sidebar > .article > .single-card > .share > a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .latest-news-4 > .container_left-sidebar > .article > .single-card > .single-card__comments > .title, .latest-news-4 > .container_right-sidebar > .article > .single-card > .single-card__comments > .title {
   color: #333333;
@@ -9532,7 +9532,7 @@ a:hover {
   margin-right: 5px;
 }
 .latest-news-4 > .container_left-sidebar > .article > .single-card > .single-card__comments > .single-card__comments-items > .item > .content > .date-reply > .reply:hover, .latest-news-4 > .container_right-sidebar > .article > .single-card > .single-card__comments > .single-card__comments-items > .item > .content > .date-reply > .reply:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .latest-news-4 > .container_left-sidebar > .article > .single-card > .single-card__comments > .single-card__comments-items > .item > .content > .name, .latest-news-4 > .container_right-sidebar > .article > .single-card > .single-card__comments > .single-card__comments-items > .item > .content > .name {
   color: #333333;
@@ -9576,7 +9576,7 @@ a:hover {
 }
 .latest-news-4 > .container_left-sidebar > .article > .single-card > .single-card__post-comment > input:hover, .latest-news-4 > .container_left-sidebar > .article > .single-card > .single-card__post-comment > textarea:hover, .latest-news-4 > .container_right-sidebar > .article > .single-card > .single-card__post-comment > input:hover, .latest-news-4 > .container_right-sidebar > .article > .single-card > .single-card__post-comment > textarea:hover {
   background-color: #ffffff;
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .latest-news-4 > .container_left-sidebar > .article > .single-card > .single-card__post-comment > input, .latest-news-4 > .container_right-sidebar > .article > .single-card > .single-card__post-comment > input {
   max-width: 340px;
@@ -9704,7 +9704,7 @@ a:hover {
   text-transform: capitalize;
 }
 .sidebar > .blog-sidebar > .categories > .lists > .item.active > a, .sidebar > .blog-sidebar > .categories > .lists > .item:hover > a {
-  color: #f22283;
+  color: #2e4899;
 }
 .sidebar > .blog-sidebar > .categories > .lists > .item:last-child > a {
   margin-bottom: 0px;
@@ -9731,7 +9731,7 @@ a:hover {
   object-position: center center;
 }
 .sidebar > .blog-sidebar > .instagram > .items > .item:hover {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .sidebar > .blog-sidebar > .follow > .socials {
   display: flex;
@@ -9751,8 +9751,8 @@ a:hover {
   font-size: 20px;
 }
 .sidebar > .blog-sidebar > .follow > .socials > a:hover {
-  border-color: #f22283;
-  background-color: #f22283;
+  border-color: #2e4899;
+  background-color: #2e4899;
   color: #ffffff;
 }
 .sidebar > .blog-sidebar > .feeds > .lists {
@@ -9800,7 +9800,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .sidebar > .blog-sidebar > .feeds > .lists > .item > a:hover > .content > .time, .sidebar > .blog-sidebar > .feeds > .lists > .item > a:hover > .content > .title {
-  color: #f22283;
+  color: #2e4899;
 }
 
 @media (max-width: 767.98px) {
@@ -10216,8 +10216,8 @@ a:hover {
   font-size: 30px;
 }
 .departments-3 > .container > .article > .departments-3__single > .doctors-department > .doctors-department__carousel > .owl-nav button:hover {
-  border-color: #f22283;
-  background-color: #f22283;
+  border-color: #2e4899;
+  background-color: #2e4899;
 }
 .departments-3 > .container > .article > .departments-3__single > .doctors-department > .doctors-department__carousel > .owl-nav button:hover span {
   color: #ffffff;
@@ -10256,7 +10256,7 @@ a:hover {
   font-family: "Roboto Bold";
   margin-right: 10px;
   font-weight: 900;
-  color: #f22283;
+  color: #2e4899;
 }
 .departments-3 > .container > .article > .departments-3__single > .department-faq > .department-accardion > .item > .item-title .fa {
   position: absolute;
@@ -10272,7 +10272,7 @@ a:hover {
   letter-spacing: -0.5px;
 }
 .departments-3 > .container > .article > .departments-3__single > .department-faq > .department-accardion > .item:first-child {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .departments-3 > .container > .article > .departments-3__single > .department-faq > .department-accardion > .item:first-child .item-text {
   display: block;
@@ -10375,8 +10375,8 @@ a:hover {
   font-size: 30px;
 }
 .departments-3 > .container > .article > .departments-3__single > .department-cases .department-cases__carousel > .owl-nav button:hover {
-  border-color: #f22283;
-  background-color: #f22283;
+  border-color: #2e4899;
+  background-color: #2e4899;
 }
 .departments-3 > .container > .article > .departments-3__single > .department-cases .department-cases__carousel > .owl-nav button:hover span {
   color: #ffffff;
@@ -10395,7 +10395,7 @@ a:hover {
 .departments-3 > .container > .article > .departments-3__single > .department-cases .department-cases__carousel > .owl-dots .owl-dot.active span {
   width: 48px;
   transition: all 0.3s ease;
-  background-color: #f22283 !important;
+  background-color: #2e4899 !important;
 }
 .departments-3 > .container > .sidebar {
   padding-top: 160px;
@@ -10559,7 +10559,7 @@ a:hover {
   cursor: pointer;
 }
 .case > .container .case__controls-item.active, .case > .container .case__controls-item:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .case > .container .case__cards {
   margin-top: 50px;
@@ -10666,7 +10666,7 @@ a:hover {
   box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.1);
 }
 .case > .container .case__cards-item:hover > .name {
-  color: #f22283;
+  color: #2e4899;
 }
 .case > .container .case__detail {
   width: 100%;
@@ -11047,7 +11047,7 @@ a:hover {
   cursor: pointer;
 }
 .doctors > .container > .doctors__controls > .doctors__controls-lists > .doctors__controls-item.active, .doctors > .container > .doctors__controls > .doctors__controls-lists > .doctors__controls-item:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .doctors > .container > .doctors__cards {
   margin-top: 50px;
@@ -11120,7 +11120,7 @@ a:hover {
   line-height: 30px;
 }
 .doctors > .container > .doctors__cards > .doctors__cards-item > .socials > a > .fa:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .doctors > .container > .doctors__cards > .doctors__cards-item:hover {
   box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.1);
@@ -11203,7 +11203,7 @@ a:hover {
   transition: all 0.3s linear;
 }
 .doctors > .container.container_left-sidebar > .article > .doctors-block > .content table > tbody tr > td a:hover, .doctors > .container.container_right-sidebar > .article > .doctors-block > .content table > tbody tr > td a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .doctors > .container.container_left-sidebar > .article > .doctors-block > .content table > tbody tr > td table, .doctors > .container.container_right-sidebar > .article > .doctors-block > .content table > tbody tr > td table {
   width: 100%;
@@ -11324,8 +11324,8 @@ a:hover {
   font-size: 30px;
 }
 .doctors > .container.container_left-sidebar > .article > .doctors-testimonials > .doctors-testimonials__carousel > .owl-nav button:hover, .doctors > .container.container_right-sidebar > .article > .doctors-testimonials > .doctors-testimonials__carousel > .owl-nav button:hover {
-  border-color: #f22283;
-  background-color: #f22283;
+  border-color: #2e4899;
+  background-color: #2e4899;
 }
 .doctors > .container.container_left-sidebar > .article > .doctors-testimonials > .doctors-testimonials__carousel > .owl-nav button:hover span, .doctors > .container.container_right-sidebar > .article > .doctors-testimonials > .doctors-testimonials__carousel > .owl-nav button:hover span {
   color: #ffffff;
@@ -11517,7 +11517,7 @@ a:hover {
 }
 .shop > .container > .shop-cart > .responsive-table > table > tbody tr td.count-add > .count-product > span.control:hover {
   cursor: pointer !important;
-  color: #f22283;
+  color: #2e4899;
 }
 .shop > .container > .shop-cart > .responsive-table > table > tbody tr td.count-add > .count-product > span.value {
   font-size: 18px;
@@ -11538,7 +11538,7 @@ a:hover {
   cursor: pointer;
 }
 .shop > .container > .shop-cart > .responsive-table > table > tbody tr td > .fa:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .shop > .container > .shop-cart > .responsive-table > table > tfoot > tr {
   border-bottom: 1px solid #e6e6e6;
@@ -11817,7 +11817,7 @@ a:hover {
   font-weight: 900;
 }
 .shop > .container > .product > .single-product > .carousels > .thumbs-carousel .owl-nav > button:hover {
-  color: #f22283;
+  color: #2e4899;
   background-color: transparent;
 }
 .shop > .container > .product > .single-product > .carousels > .thumbs-carousel .owl-nav > button:first-child {
@@ -11909,7 +11909,7 @@ a:hover {
 }
 .shop > .container > .product > .single-product > .content > .count-add > .count-product > span.control:hover {
   cursor: pointer !important;
-  color: #f22283;
+  color: #2e4899;
 }
 .shop > .container > .product > .single-product > .content > .count-add > .count-product > span.value {
   font-size: 18px;
@@ -12014,7 +12014,7 @@ a:hover {
   color: #333333;
 }
 .shop > .container > .relatives > .head > .allCard:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .shop > .container > .relatives > .relatives__carousel {
   margin-top: 30px;
@@ -12094,7 +12094,7 @@ a:hover {
   line-height: 16px;
   padding: 7px 15px;
   text-transform: uppercase;
-  background-color: #f22283;
+  background-color: #2e4899;
   color: #ffffff;
 }
 .shop > .container > .relatives > .relatives__carousel .owl-stage-outer .owl-item > .relatives__card-item > .content {
@@ -12285,7 +12285,7 @@ a:hover {
   line-height: 16px;
   padding: 7px 15px;
   text-transform: uppercase;
-  background-color: #f22283;
+  background-color: #2e4899;
   color: #ffffff;
 }
 .shop > .container.container_left-sidebar > .article > .shop-block > .shop-block__card > .shop-block__card-item > .content, .shop > .container.container_right-sidebar > .article > .shop-block > .shop-block__card > .shop-block__card-item > .content {
@@ -12378,7 +12378,7 @@ a:hover {
   color: #333333;
 }
 .shop > .container.shop-checkout > .article > .form-block .form-group > label > span {
-  color: #f22283;
+  color: #2e4899;
 }
 .shop > .container.shop-checkout > .article > .form-block .form-group > .form-check {
   margin-top: 70px;
@@ -12492,8 +12492,8 @@ a:hover {
   border: 1px solid transparent;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__search > button:hover, .sidebar > .shop-sidebar > .shop-sidebar__search > button:focus, .sidebar > .shop-sidebar > .shop-sidebar__search > button:active {
-  border-color: #f22283;
-  color: #f22283;
+  border-color: #2e4899;
+  color: #2e4899;
 }
 .sidebar > .shop-sidebar > div > .title {
   font-size: 26px;
@@ -12538,22 +12538,22 @@ a:hover {
   transition: all 0.3s linear;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__categories > .list > .list-item > a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__categories > .list > .list-item > a:hover > .text {
   padding-left: 30px;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__categories > .list > .list-item > a:hover > .text:before {
-  background-color: #f22283;
+  background-color: #2e4899;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__categories > .list > .list-item.active > a {
-  color: #f22283;
+  color: #2e4899;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__categories > .list > .list-item.active > a .text {
   padding-left: 30px;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__categories > .list > .list-item.active > a .text:before {
-  background-color: #f22283;
+  background-color: #2e4899;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__filter-price {
   padding-bottom: 50px;
@@ -12699,7 +12699,7 @@ a:hover {
   transition: color 0.3s ease-in-out;
 }
 .sidebar > .shop-sidebar > .shop-sidebar__new-arrivals > .list > .list-item > a:hover > .content > .name, .sidebar > .shop-sidebar > .shop-sidebar__new-arrivals > .list > .list-item > a:hover > .content > .price {
-  color: #f22283;
+  color: #2e4899;
 }
 .sidebar > .checkout-sidebar {
   width: 100%;
@@ -12863,7 +12863,7 @@ a:hover {
   text-decoration: underline !important;
 }
 .sidebar > .checkout-sidebar > div > .radioBoxes > .chek-term-condition > label > span > a span {
-  color: #f22283;
+  color: #2e4899;
 }
 .sidebar > .checkout-sidebar > div > .radioBoxes > button {
   margin-left: -2px;
@@ -12916,7 +12916,7 @@ a:hover {
   cursor: pointer;
 }
 .faqs > .container > .article .faqs__controls-item.active, .faqs > .container > .article .faqs__controls-item:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .faqs > .container > .article .faqs__cards {
   margin-bottom: 40px;
@@ -12947,7 +12947,7 @@ a:hover {
   font-family: "Roboto Bold";
   margin-right: 10px;
   font-weight: 900;
-  color: #f22283;
+  color: #2e4899;
 }
 .faqs > .container > .article .faqs__cards-item-title .fa {
   position: absolute;
@@ -12965,7 +12965,7 @@ a:hover {
   letter-spacing: -0.5px;
 }
 .faqs > .container > .article .faqs__cards-item:nth-child(2) {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .faqs > .container > .article .faqs__cards-item:nth-child(2) .faqs__cards-item-text {
   display: block;
@@ -13056,8 +13056,8 @@ a:hover {
   font-size: 20px;
 }
 .faqs > .container > .sidebar > .follow > .socials > a:hover {
-  border-color: #f22283;
-  background-color: #f22283;
+  border-color: #2e4899;
+  background-color: #2e4899;
   color: #ffffff;
 }
 
@@ -13107,7 +13107,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 .contact > .contact-map > .container > .contact-map__card > .content > .number > a:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .contact > .contact-map > .container > .contact-map__card > .content > .email, .contact > .contact-map > .container > .contact-map__card > .content > .adress {
   margin: 0;
@@ -13121,7 +13121,7 @@ a:hover {
 }
 .contact > .contact-map > .container > .contact-map__card > .content > .email:hover {
   cursor: pointer;
-  color: #f22283;
+  color: #2e4899;
 }
 .contact > .contact-map > .container > .contact-map__card > .content > .btn {
   margin-top: 25px;
@@ -13193,7 +13193,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > .locations > .item > .tel:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > .locations > .item > .adress {
   font-size: 16px;
@@ -13209,7 +13209,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > .locations > .item > .email:hover {
-  color: #f22283;
+  color: #2e4899;
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > form {
   display: flex;
@@ -13237,10 +13237,10 @@ a:hover {
   font-weight: 100;
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > form > .form-row > .form-group > .form-control:hover {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > form > .form-row > .form-group > .form-control:focus {
-  border-color: #f22283;
+  border-color: #2e4899;
   background-color: rgba(0, 0, 0, 0.2);
 }
 .contact > .contact-map-2 > .container > .contact-map__card-2 > .content > form > .form-row > .form-group:first-child {
@@ -13299,10 +13299,10 @@ a:hover {
   font-weight: 100;
 }
 .contact > .container.container_right-sidebar > .article > form > .form-row > .form-group > .form-control:hover {
-  border-color: #f22283;
+  border-color: #2e4899;
 }
 .contact > .container.container_right-sidebar > .article > form > .form-row > .form-group > .form-control:focus {
-  border-color: #f22283;
+  border-color: #2e4899;
   background-color: #ffffff;
 }
 .contact > .container.container_right-sidebar > .article > form > .form-row > .form-group:first-child {
@@ -13702,7 +13702,7 @@ body {
     height: 100%;
   }
   .header-middle .navbar__submenu-link:hover {
-    color: #f22283;
+    color: #2e4899;
     text-indent: 0;
     background-color: transparent;
   }
@@ -15155,7 +15155,7 @@ body {
     border-radius: 10px;
   }
   .shop > .container > .shop-cart > .responsive-table::-webkit-scrollbar-thumb:hover {
-    background-color: #f22283;
+    background-color: #2e4899;
   }
   .shop > .container > .shop-cart > .responsive-table > table > thead > tr > td.title, .shop > .container > .shop-cart > .responsive-table > table > thead > tr > th.title {
     padding: 30px 15px;
@@ -17074,4 +17074,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main_male.css.map */

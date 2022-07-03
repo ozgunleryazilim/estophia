@@ -31,10 +31,14 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
     <!-- template style -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% if gender == "male" %}
+        <link rel="stylesheet" href="{% static 'css/main_male.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% endif %}
 
     {% block custom_css %}
-    
+
     {% endblock %}
 
     <!-- Responsive -->

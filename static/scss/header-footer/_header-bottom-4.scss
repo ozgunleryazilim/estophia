@@ -8,18 +8,22 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 350px;
+	height: 600px;
 	z-index: 10;
 	
 	& > img {
 		position: absolute;
 		top: -150px;
 		left: 0;
-		height: 500px;
+		height: 600px;
 		width: 100%;
 		z-index: 1;
 		object-fit: cover;
 		object-position: center center;
+	}
+
+	.banner-text{
+		font-size:1.2rem;
 	}
 	
 	

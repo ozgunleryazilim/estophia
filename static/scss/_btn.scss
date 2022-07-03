@@ -50,6 +50,25 @@
         
         }
     }
+
+    &_outline_primary{
+        background-color: $primary-blue;
+        color: $light-col;
+
+        &:hover{
+            background-color: $primary-pink-2;
+            color: $light-col;
+        }
+    }
+
+    &_primary{
+        background-color: $primary-pink-2;
+        color: $light-col;
+        &:hover{
+            background-color: $primary-blue;
+            color: $light-col;
+        }
+    }
     
     &_blue {
         padding: 25px 37.5px; 
