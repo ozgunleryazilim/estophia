@@ -1,6 +1,8 @@
 {% load static i18n %}
 {% load services %}
 
+{% url gender|add:':kvkk' as kvkk_url %}
+
 <!-- Start of .footer -->
 <footer class="footer">
     <!-- Start of .footer__top -->
@@ -9,7 +11,7 @@
         <div class="container">
             <div>
                 <div class="footer__top-blocks">
-                    <h1 class="title">{% trans "Contacts" %}</h1>
+                    <h1 class="title">{% trans "Telephone" %}</h1>
                     <div class="content">
                         <div class="content-item">
                             <div class="icon">
@@ -28,6 +30,11 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="footer__top-blocks">
+                    <h1 class="title">{% trans "Address" %}</h1>
+                    <div class="content">
                         <div class="content-item">
                             <div class="icon">
                                 <svg width="18.88" height="25.719" viewBox="0 0 18.88 25.719">
@@ -40,6 +47,11 @@
                                 <p>{% trans "34100 Cumhuriyet Cad. Estophia Hastanesi İstanbul/Türkiye" %}</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="footer__top-blocks">
+                    <h1 class="title">{% trans "Email" %}</h1>
+                    <div class="content">
                         <div class="content-item">
                             <div class="icon">
                                 <svg width="25.16" height="25.157" viewBox="0 0 25.16 25.157">
@@ -56,70 +68,9 @@
                         </div>
                     </div>
                 </div>
-
-                {% url gender|add:':about' as about_url %}
-                {% url gender|add:':service_categories' as services_url %}
-                {% url gender|add:':howitworks' as howitworks_url %}
-                {% url gender|add:':before_after' as before_after_url %}
-                {% url gender|add:':blog_list' as blog_url %}
-                {% url gender|add:':kvkk' as kvkk_url %}
-
-                <div class="footer__top-blocks">
-                    <h1 class="title">{% trans "SITE MAP" %}</h1>
-                    <div class="content site-map">
-                        <ul class="menu">
-                            <li>
-                                <a href="{{ about_url }}">
-                                    <i class="fa fa-angle-right"></i>{% trans "About Us" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ services_url }}">
-                                    <i class="fa fa-angle-right"></i>{% trans "Services" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ howitworks_url }}">
-                                    <i class="fa fa-angle-right"></i>{% trans "How it works" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ before_after_url }}">
-                                    <i class="fa fa-angle-right"></i>{% trans "Before & After" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ blog_url }}">
-                                    <i class="fa fa-angle-right"></i>{% trans "Blog" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ kvkk_url }}">
-                                    <i class="fa fa-angle-right"></i>{% trans "GDPR" %}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
 
             <div>
-                <div class="footer__top-blocks">
-                    <h1 class="title">{% trans "Services" %}</h1>
-                    <div class="content site-map">
-                        <ul class="menu">
-                            {% get_service_categories gender=gender in_navbar=True as home_service_list %}
-                            {% for service in home_service_list %}
-                                <li>
-                                    <a href="{{ service.get_absolute_url }}">
-                                        <i class="fa fa-angle-right"></i>{{ service.title }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-
-                        </ul>
-                    </div>
-                </div>
                 <div class="footer__top-blocks">
                     <h1 class="title">{% trans "Estophia On Map" %}</h1>
                     <div class="content">

@@ -7,3 +7,4 @@ from .before_after import *
 from .blog import *
 from .contact import *
 from .kvkk import *
+from .search import *

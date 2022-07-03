@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 
 from common.views import BaseServicesListView, BaseServicesDetailView, BaseBeforeAfterListView, BaseBlogListView, \
-    BaseBlogDetailView, BaseServiceCategoryListView, BaseServiceCategoryDetailView
+    BaseBlogDetailView, BaseServiceCategoryListView, BaseServiceCategoryDetailView, BaseSearchView
 from female.forms import FemaleBlogCommentForm
 from female.models import (FemaleServiceItem, FemaleBeforeAfterItem, FemaleBlog, FemaleBlogCategory,
                            FemaleServiceCategory, FemaleBeforeAfterCategory)
@@ -69,3 +69,9 @@ class FemaleContactPage(GenderedViewMixin, TemplateView):
 class FemaleKVKKPage(GenderedViewMixin, TemplateView):
     gender = "female"
     template_name = "pages/kvkk.html"
+
+
+class FemaleSearchView(BaseSearchView):
+    gender = "female"
+    blog_model = FemaleBlog
+    service_model = FemaleServiceItem

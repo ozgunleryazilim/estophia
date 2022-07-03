@@ -18,4 +18,5 @@ urlpatterns = [
     path(_('blog/<slug>/'), views.FemaleBlogDetailView.as_view(), name="blog_detail"),
     path(_('contact/'), views.FemaleContactPage.as_view(), name="contact"),
     path(_('gdpr/'), views.FemaleKVKKPage.as_view(), name="kvkk"),
+    path(_('search/'), views.FemaleSearchView.as_view(), name="search"),
 ]

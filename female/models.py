@@ -160,3 +160,10 @@ class FemaleKVKKPageSeo(base_models.BaseKVKKPageSeo):
     translations = TranslatedFields(
         **base_models.BaseKVKKPageSeo.translations
     )
+
+
+class FemaleSearchPageSeo(base_models.BaseSearchPageSeo):
+    gender = "female"
+    translations = TranslatedFields(
+        **base_models.BaseSearchPageSeo.translations
+    )

@@ -1,5 +1,7 @@
 from django.contrib import messages
-from django.shortcuts import redirect
+from django.db.models import Q
+from django.shortcuts import redirect, render
+from django.views import View
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin
 from parler.views import TranslatableSlugMixin
@@ -93,3 +95,33 @@ class BaseBlogDetailView(GenderedViewMixin, TranslatableSlugMixin, FormMixin, De
         if form.is_valid():
             return self.form_valid(form)
         return self.form_invalid(form)
+
+
+class BaseSearchView(View):
+    blog_model = None
+    service_model = None
+    paginate_by = 10
+    template_name = "pages/search_results.html"
+    gender = ""
+
+    def get(self, request):
+        search_text = request.GET.get('search', "")
+        services = self.service_model.objects.all()
+        blogs = self.blog_model.objects.all()
+        for word in search_text.split(" "):
+            services = services.filter(
+                Q(translations__title__icontains=word) |
+                Q(translations__content__icontains=word)
+            )
+            blogs = blogs.filter(
+                Q(translations__title__icontains=word) |
+                Q(translations__content__icontains=word)
+            )
+        services = services.distinct()[:self.paginate_by]
+        blogs = blogs.distinct()[:self.paginate_by]
+        context = {
+            'services': services,
+            'blogs': blogs,
+            'gender': self.gender,
+        }
+        return render(request, self.template_name, context)

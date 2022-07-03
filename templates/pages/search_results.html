@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load search %}
+
+{% block meta %}
+    {% get_search_seo_obj gender=gender as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
+
+{% block content %}
+
+    {% get_search_seo_obj gender=gender as search_page_obj %}
+    {% include "components/banner.html" with obj=search_page_obj %}
+
+    <!-- Start of .latest-news-4 -->
+    <section class="departments-3 main-blog">
+        <div class="container">
+
+            <div class="departments-3__items row">
+
+                {% for service in services %}
+                    {% include "components/services/service-item.html" %}
+                {% endfor %}
+                {% for blog in blogs %}
+                    {% include "components/blog/blog-item.html" %}
+                {% endfor %}
+
+                {% include "components/pagination.html" %}
+            </div>
+        </div>
+    </section>
+    <!-- End of .latest-news-4 -->
+
+
+{% endblock %}

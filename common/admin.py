@@ -16,6 +16,13 @@ class BaseHomePageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
+class BaseSearchPageSeoAdmin(TranslatableAdmin):
+    fieldsets = (
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
+    filter_vertical = ('meta_keywords',)
+
+
 class BaseHomeSliderAdmin(TranslatableAdmin):
     fields = ('title', 'subtitle', 'image', 'redirect_url')
     list_display = ('title',)

@@ -13,11 +13,13 @@
                 alt="{{ obj.banner_title|striptags }}">
 
     <div class="container">
-        <h1 class="section-title">{{ obj.banner_title|safe }}</h1>
-        <div class="w-50 banner-text">
-            {{ obj.banner_description|safe }}
+        <div class="text-container">
+            <h1 class="section-title">{{ obj.banner_title|safe }}</h1>
+            <div class="w-md-50 banner-text my-4">
+                {{ obj.banner_description|safe }}
+            </div>
+            <a href="#" class="btn btn-2_pink btn_outline_primary">{% trans "CONTACT US" %}</a>
         </div>
-        <a href="#" class="btn btn-2_pink btn_outline_primary">{% trans "CONTACT US" %}</a>
     </div>
 </header>
 <!-- End of .header-bottom-4 -->

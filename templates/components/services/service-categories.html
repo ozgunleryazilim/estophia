@@ -2,7 +2,7 @@
 {% load services %}
 
 <div class="departments-blog">
-    <h1 class="title">{% trans "Services" %}</h1>
+    <h1 class="title">{% trans "All Services" %}</h1>
     {% get_services gender=gender as service_categories %}
     <ul class="lists">
         {% for service_item in service_categories %}
