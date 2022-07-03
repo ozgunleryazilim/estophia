@@ -1637,29 +1637,29 @@ body {
   /*****************************************************/
 
   /*---------- Start .header-bottom-4 section responsive ----------*/
-  .header-bottom-4 {
-    height: 430px;
-
-    & > img {
-      top: -70px;
-      object-position: center top;
-    }
-
-    &__bg {
-      top: -70px;
-      background-image: linear-gradient(to right, $light-col 30%, transparent);
-    }
-
-    & > .container {
-      text-align: center;
-      padding-top: 0;
-      top: 50%;
-      & > .breadcrumb {
-        display: flex;
-        justify-content: center;
-      }
-    }
-  }
+  //.header-bottom-4 {
+  //  height: 430px;
+  //
+  //  & > img {
+  //    top: -70px;
+  //    object-position: center top;
+  //  }
+  //
+  //  &__bg {
+  //    top: -70px;
+  //    background-image: linear-gradient(to right, $light-col 30%, transparent);
+  //  }
+  //
+  //  & > .container {
+  //    text-align: center;
+  //    padding-top: 0;
+  //    top: 50%;
+  //    & > .breadcrumb {
+  //      display: flex;
+  //      justify-content: center;
+  //    }
+  //  }
+  //}
   /*---------- End .header-bottom-4 section responsive ----------*/
 
   /*---------- Start .about-4 section responsive ----------*/

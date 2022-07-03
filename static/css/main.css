@@ -14715,27 +14715,6 @@ body {
   /************** Start of about.html *****************/
   /*****************************************************/
   /*---------- Start .header-bottom-4 section responsive ----------*/
-  .header-bottom-4 {
-    height: 430px;
-  }
-  .header-bottom-4 > img {
-    top: -70px;
-    object-position: center top;
-  }
-  .header-bottom-4__bg {
-    top: -70px;
-    background-image: linear-gradient(to right, #ffffff 30%, transparent);
-  }
-  .header-bottom-4 > .container {
-    text-align: center;
-    padding-top: 0;
-    top: 50%;
-  }
-  .header-bottom-4 > .container > .breadcrumb {
-    display: flex;
-    justify-content: center;
-  }
-
   /*---------- End .header-bottom-4 section responsive ----------*/
   /*---------- Start .about-4 section responsive ----------*/
   .about-4 {
