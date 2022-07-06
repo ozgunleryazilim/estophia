@@ -13,7 +13,7 @@
             {% endif %}
             <img src="{{ appointment_image }}" alt="{% trans 'Estophia Appointment Form' %}">
         </div>
-        <form>
+        <form class="form-contact">
             <h1 class="section-title">{% trans "Make an appointment" %}</h1>
             <div class="input-box">
                 <label for="popup-name">{% trans "Name" %} *</label>
@@ -26,13 +26,13 @@
             </div>
 
             <div class="input-box">
-                <label for="popup-phone">{% trans "Phone" %} *</label>
-                <input type="tel" id="popup-phone" required>
+                <label for="appointment-Phone">{% trans "Phone" %} *</label>
+                <input type="tel" id="appointment-Phone" required class="appointment-phone-input">
             </div>
 
             <div class="select-box">
                 <i class="fa fa-angle-down"></i>
-                {% get_services gender=gender as service_list %}
+                {% get_service_categories gender=gender as service_list %}
                 <select>
                     <option value="">{% trans "Choose Service" %}</option>
                     {% for service in service_list %}

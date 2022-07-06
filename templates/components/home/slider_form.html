@@ -1,5 +1,5 @@
 {% load i18n %}
-
+{% load services %}
 <!-- Start of .benefits-form -->
 <div class="container">
     <div class="benefits-form">
@@ -9,7 +9,7 @@
                 Looking for <span>a quality medical services?</span>
                 {% endblocktrans %}
             </h1>
-            <form action="test.html">
+            <form action="">
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <input type="text" class="input-box form-control" placeholder="{% trans 'Name/Surname' %}"
@@ -22,12 +22,16 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-                        <input type="text" class="input-box form-control" placeholder="{% trans 'Phone Number' %}"
-                               required name="phone-number">
+                        <input type="tel" id="contact-Phone" class="input-box form-control" required>
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <select class="input-box form-control" required name="treatment-selection">
                             <option value="">{% trans 'Treatment Selection' %}</option>
+                            {% get_service_categories gender=gender as services %}
+                            {% for service in services %}
+                            <option value="{{ service.title }}">{{ service.title }}</option>
+                            {% endfor %}
+
                         </select>
                     </div>
                 </div>

@@ -221,7 +221,7 @@ $("document").ready(function ($) {
         nav: true,
         dots: true,
         items: 1,
-        smartSpeed: 1000,
+        smartSpeed: 1200,
         autoplay: true,
         autoplayTimeout: 10000,
         mouseDrag: false,

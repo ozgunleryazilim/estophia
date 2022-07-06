@@ -4,7 +4,7 @@
     <form action="" class="appointment-form">
         <input type="text" placeholder="{% trans 'Name&Surname' %}*">
         <input type="email" placeholder="{% trans 'E-mail' %}*">
-        <input type="tel" placeholder="{% trans 'Phone' %}*">
+        <input type="tel" id="contact-Phone" class="input-box form-control" required>
         <textarea placeholder="{% trans 'Message' %}"></textarea>
         <button type="submit" class="btn btn_pink">{% trans 'Send' %}</button>
     </form>

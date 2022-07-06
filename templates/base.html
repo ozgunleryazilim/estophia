@@ -30,6 +30,9 @@
     <!-- bootstrap style -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
+    <link rel="stylesheet" href="{% static 'css/phonePlugin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/phone_input.css' %}">
+
     <!-- template style -->
     {% if gender == "male" %}
         <link rel="stylesheet" href="{% static 'css/main_male.css' %}">
@@ -103,6 +106,44 @@
 
 <!-- customer js -->
 <script src="{% static 'js/index.js' %}"></script>
+
+<script src="{% static 'js/phonePlugin.js' %}"></script>
+
+<script>
+    var input = document.querySelector("#contact-Phone");
+    var input2 = document.querySelector("#contact-side-phone");
+    var input3 = document.querySelector("#appointment-Phone");
+
+    const inputConf = {
+        allowDropdown: true,
+        formatOnDisplay: true,
+        hiddenInput: "contact-full_number",
+        initialCountry: "{% if LANGUAGE_CODE == 'en' %}us{% else %}{{ LANGUAGE_CODE }}{% endif %}",
+        placeholderNumberType: "MOBILE",
+        preferredCountries: ['us', 'tr', 'de', 'it', 'es', 'ru'],
+        separateDialCode: true,
+        utilsScript: "{% static 'js/phone.js' %}",
+    }
+    if (input) {
+        window.intlTelInput(input, inputConf);
+    }
+    if (input2) {
+        window.intlTelInput(input2, inputConf);
+    }
+    if (input3) {
+        window.intlTelInput(input3, inputConf);
+    }
+
+
+    $(document).on('submit', '.form-contact', function (e) {
+        let phoneInput = $('[name=contact-full_number]').val()
+        if (!phoneInput.includes('+')) {
+            $('#contact-Phone').addClass('is-invalid');
+            $('#contact-Phone-error').removeClass('d-none');
+            e.preventDefault();
+        }
+    })
+</script>
 
 </body>
 
