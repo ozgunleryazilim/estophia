@@ -4,9 +4,9 @@ $("document").ready(function ($) {
     $(window).on("scroll", function () {
         // scroll to top btn
         if (window.pageYOffset >= 1000) {
-            $("#scrollUp").fadeIn(500);
+            $(".sticky-btn").fadeIn(500);
         } else {
-            $("#scrollUp").fadeOut(500);
+            $(".sticky-btn").fadeOut(500);
         }
         fixedMenu();
     });

@@ -40,14 +40,15 @@ class HomeHowItWorksYoutubeVideoLink(StringPreference):
     default = ""
     verbose_name = _("Home How It Works Youtube Video Link")
 
-#
-# @global_preferences_registry.register
-# class FacebookLink(StringPreference):
-#     section = page
-#     name = 'facebook_link'
-#     default = ""
-#     verbose_name = _("Facebook Linki")
-#
+
+@global_preferences_registry.register
+class WhatsappNumber(StringPreference):
+    section = common
+    name = 'whatsapp_number'
+    default = ""
+    verbose_name = _("Whatsapp Number")
+
+
 #
 # @global_preferences_registry.register
 # class InstagramLink(StringPreference):

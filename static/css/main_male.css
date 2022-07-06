@@ -548,8 +548,8 @@ a:hover {
   background-color: #2e4899;
   box-shadow: 8.135px 18.271px 51px 0px rgba(31, 61, 157, 0.4);
   position: fixed;
-  right: 80px;
-  bottom: 50px;
+  right: 20px;
+  bottom: 20px;
   width: 50px;
   height: 52px;
   z-index: 20;
@@ -558,12 +558,20 @@ a:hover {
   overflow: hidden;
   cursor: pointer;
 }
+.to-top.whatsapp-btn {
+  bottom: 80px;
+  background-color: #25D366;
+}
+.to-top.whatsapp-btn:hover {
+  background-color: white;
+  color: #25D366;
+}
 .to-top > .fa {
   display: block;
   width: 100%;
   line-height: 45px;
   text-align: center;
-  font-size: 24px;
+  font-size: 30px;
 }
 .to-top:hover {
   background-color: #2e4899;

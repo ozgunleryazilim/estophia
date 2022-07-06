@@ -4,7 +4,7 @@
     <span class="searchBox-close">&times;</span>
     {% url gender|add:':search' as search_url %}
     <form action="{{ search_url }}" method="get">
-        <input type="search" placeholder="{% trans 'Write Search Keyword & Press Enter' %}">
+        <input type="text" name="search" placeholder="{% trans 'Write Search Keyword & Press Enter' %}">
         <button type="submit">
             <svg width="24.71" height="25.687" viewBox="0 0 24.71 24.687">
                 <path id="search.svg" class="cls-2"
