@@ -115,9 +115,6 @@
 <script src="{% static 'js/phonePlugin.js' %}"></script>
 
 <script>
-    var input = document.querySelector("#contact-Phone");
-    var input2 = document.querySelector("#contact-side-phone");
-    var input3 = document.querySelector("#appointment-Phone");
 
     const inputConf = {
         allowDropdown: true,
@@ -129,25 +126,19 @@
         separateDialCode: true,
         utilsScript: "{% static 'js/phone.js' %}",
     }
-    if (input) {
-        window.intlTelInput(input, inputConf);
-    }
-    if (input2) {
-        window.intlTelInput(input2, inputConf);
-    }
-    if (input3) {
-        window.intlTelInput(input3, inputConf);
-    }
 
+    function initPhoneInput(id) {
+        const input = document.querySelector(id);
 
-    $(document).on('submit', '.form-contact', function (e) {
-        let phoneInput = $('[name=contact-full_number]').val()
-        if (!phoneInput.includes('+')) {
-            $('#contact-Phone').addClass('is-invalid');
-            $('#contact-Phone-error').removeClass('d-none');
-            e.preventDefault();
+        if (input) {
+            window.intlTelInput(input, inputConf);
         }
-    })
+    }
+    initPhoneInput("#contact-Phone");
+    initPhoneInput("#contact-side-phone");
+    initPhoneInput("#appointment-Phone");
+    initPhoneInput("#contact-phone-services");
+
 </script>
 
 </body>
