@@ -14,7 +14,7 @@
             {% static 'images/icons/dental.png' as default_icon %}
             {% for category in service_categories %}
                 <a class="our-departments-2__inner-item text-dark" href="{{ category.get_absolute_url }}">
-                    <div class="icon mb-4">
+                    <div class="icon mb-1">
                         <img
                                 {% if department.icon %}
                                     src="{{ category.icon.url }}"
@@ -23,8 +23,8 @@
                                 {% endif %}
                                     alt="{{ category.title }}">
                     </div>
-                    <h1 class="title">{{ category.title }}</h1>
-                    <p class="text">{{ category.description|safe|default:"" }}</p>
+                    <h1 class="title mb-0">{{ category.title }}</h1>
+                    {{ category.description|safe|default:""|truncatewords_html:10 }}
                 </a>
             {% endfor %}
 
