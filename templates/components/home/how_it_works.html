@@ -2,7 +2,7 @@
 
 {# TODO: howitworks_url eklenecek... #}
 <!-- Start of .about-3 -->
-<section class="about-3" id="about">
+<section class="about-3 pb-3" id="about">
     <div class="container">
 
         <div class="content">
@@ -47,7 +47,13 @@
                 <img src="{{ howitworks_image }}" alt="{% trans 'Estophia How it works' %}">
             </div>
         </div>
-        {% include "components/home/gallery.html" %}
+
     </div>
 </section>
 <!-- End of .about-3 -->
+
+<div class="about-3 pt-3">
+    <div class="container ">
+    {% include "components/home/gallery.html" %}
+</div>
+</div>

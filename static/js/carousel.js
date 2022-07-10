@@ -38,6 +38,8 @@ $("document").ready(function ($) {
     const $doctorsTestimonialsCarousel = $(".doctors-testimonials__carousel"),
         $relativesCarousel = $(".relatives__carousel");
 
+    /*------------------------- gallery.html -------------------------*/
+    const $beforeAfterCarousel = $(".before_after__carousel");
     /*------------------------- Home page 1 -------------------------*/
 
     // .header-bottom__banner
@@ -189,13 +191,13 @@ $("document").ready(function ($) {
                 nav: true,
                 margin: 10,
             },
-            
+
             768: {
                 items: 2,
                 dots: true,
                 nav: false,
             },
-            
+
             992: {
                 items: 3,
                 dots: true,
@@ -211,7 +213,7 @@ $("document").ready(function ($) {
             },
         }
     });
-    
+
     /*------------------------- Home page 2 -------------------------*/
 
     // .header-bottom__banner-2
@@ -425,6 +427,53 @@ $("document").ready(function ($) {
         }
     });
 
+    // $beforeAfterCarousel__items
+    $beforeAfterCarousel.owlCarousel({
+        loop: false,
+        margin: 30,
+        nav: true,
+        dots: true,
+        items: 4,
+        // autoWidth: true,
+        smartSpeed: 1000,
+        autoplay: true,
+        autoplayTimeout: 10000,
+        mouseDrag: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                dots: false,
+                nav: true,
+                items: 1,
+            },
+
+            420: {
+                dots: false,
+                nav: true,
+                items: 2,
+            },
+
+            768: {
+                items: 3,
+                dots: true,
+                nav: true,
+            },
+
+            900: {
+                items: 4,
+                dots: true,
+                nav: true,
+            },
+
+            1300: {
+                items: 4,
+                dots: true,
+                nav: true,
+            },
+
+        }
+    });
+
     // .our-clients-3__carousel
     $ourClients2Carousel.owlCarousel({
         loop: true,
@@ -475,7 +524,7 @@ $("document").ready(function ($) {
                 dots: true,
                 nav: false,
             },
-            
+
             1300: {
                 nav: true,
             }
