@@ -4955,7 +4955,7 @@ a:hover {
 /**************************************************/
 .about {
   position: relative;
-  padding-top: 350px;
+  padding-top: 260px;
   padding-bottom: 160px;
   z-index: 9;
 }
@@ -13761,7 +13761,7 @@ body {
   /*---------- End .header-bottom responsive ----------*/
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 130px;
+    padding-top: 500px;
     padding-bottom: 100px;
   }
   .about > .container {
@@ -14123,7 +14123,7 @@ body {
     font-size: 20px;
   }
   .header-bottom-2 > .container {
-    top: 115%;
+    top: 700px;
   }
   .header-bottom-2 > .container .benefits-form {
     width: 100%;
@@ -15325,7 +15325,7 @@ body {
   /*---------- End .why-choose-us responsive ----------*/
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 460px;
+    padding-top: 480px;
   }
   .about .container {
     text-align: center;
@@ -15497,7 +15497,7 @@ body {
   /*---------- End .header-bottom responsive ----------*/
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 420px;
+    padding-top: 500px;
     padding-bottom: 70px;
   }
   .about .container {
@@ -15773,9 +15773,6 @@ body {
   /************** Start of index2.html *****************/
   /*****************************************************/
   /*---------- Start .header-bottom-2 responsive ----------*/
-  .header-bottom-2 {
-    height: 600px;
-  }
   .header-bottom-2__banner {
     height: 600px;
     top: 0;
@@ -16615,7 +16612,7 @@ body {
   /*---------- End .header-bottom responsive ----------*/
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 390px;
+    padding-top: 500px;
   }
 
   /*---------- End .about section responsive ----------*/
@@ -16842,10 +16839,6 @@ body {
 
   /*---------- Start .header-bottom-3 responsive ----------*/
   /*---------- Start .about-3 section responsive ----------*/
-  .about-3 > .container > .video {
-    display: none;
-  }
-
   /*---------- End .about-3 section responsive ----------*/
   /*---------- Start .other-services responsive ----------*/
   .other-services-3__cards > .card-item {

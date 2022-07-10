@@ -488,7 +488,7 @@ body {
 
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 130px;
+    padding-top: 500px;
     padding-bottom: 100px;
 
     & > .container {
@@ -911,7 +911,7 @@ body {
 
     & > .container {
       // position: initial;
-      top: 115%;
+      top: 700px;
 
       .benefits-form {
         width: 100%;
@@ -2432,7 +2432,7 @@ body {
 
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 460px;
+    padding-top: 480px;
 
     .container {
       text-align: center;
@@ -2665,7 +2665,7 @@ body {
 
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 420px;
+    padding-top: 500px;
     padding-bottom: 70px;
 
     .container {
@@ -3033,7 +3033,7 @@ body {
 
   /*---------- Start .header-bottom-2 responsive ----------*/
   .header-bottom-2 {
-    height: 600px;
+    //height: 600px;
     &__banner {
       height: 600px;
       top: 0;
@@ -4111,7 +4111,7 @@ body {
 
   /*---------- Start .about section responsive ----------*/
   .about {
-    padding-top: 390px;
+    padding-top: 500px;
   }
   /*---------- End .about section responsive ----------*/
 
@@ -4426,13 +4426,13 @@ body {
   /*---------- Start .header-bottom-3 responsive ----------*/
 
   /*---------- Start .about-3 section responsive ----------*/
-  .about-3 {
-    & > .container {
-      & > .video {
-        display: none;
-      }
-    }
-  }
+  //.about-3 {
+  //  & > .container {
+  //    & > .video {
+  //      display: none;
+  //    }
+  //  }
+  //}
   /*---------- End .about-3 section responsive ----------*/
 
   /*---------- Start .other-services responsive ----------*/
