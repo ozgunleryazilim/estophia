@@ -1,5 +1,5 @@
 {% load static i18n %}
-{% load home %}
+{% load services %}
 
 <!-- Start of .our-departments-2 -->
 <section class="our-departments-2" id="departments">
@@ -10,22 +10,22 @@
             {% endblocktrans %}
         </h1>
         <div class="our-departments-2__carousel owl-carousel owl-theme">
-            {% get_home_departments gender=gender as departments %}
+            {% get_service_categories gender=gender in_home=True as service_categories %}
             {% static 'images/icons/dental.png' as default_icon %}
-            {% for department in departments %}
-                <div class="our-departments-2__inner-item">
-                    <div class="icon">
+            {% for category in service_categories %}
+                <a class="our-departments-2__inner-item text-dark" href="{{ category.get_absolute_url }}">
+                    <div class="icon mb-4">
                         <img
                                 {% if department.icon %}
-                                    src="{{ department.icon.url }}"
+                                    src="{{ category.icon.url }}"
                                 {% else %}
                                     src="{{ default_icon }}"
                                 {% endif %}
-                                    alt="{{ department.title }}">
+                                    alt="{{ category.title }}">
                     </div>
-                    <h1 class="title">{{ department.title }}</h1>
-                    <p class="text">{{ department.description|default:"" }}</p>
-                </div>
+                    <h1 class="title">{{ category.title }}</h1>
+                    <p class="text">{{ category.description|safe|default:"" }}</p>
+                </a>
             {% endfor %}
 
         </div>

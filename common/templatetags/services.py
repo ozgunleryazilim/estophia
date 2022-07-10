@@ -16,7 +16,7 @@ def get_services_seo_obj(gender):
 
 
 @register.simple_tag
-def get_service_categories(gender, limit=None, in_navbar=False):
+def get_service_categories(gender, limit=None, in_navbar=False, in_home=False):
     models = {
         "male": MaleServiceCategory,
         "female": FemaleServiceCategory
@@ -25,6 +25,8 @@ def get_service_categories(gender, limit=None, in_navbar=False):
     query = model.objects.all()
     if in_navbar:
         query = query.filter(in_navbar=True)
+    if in_home:
+        query = query.filter(in_home=True)
     if limit:
         return query[:limit]
     return query

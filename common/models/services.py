@@ -39,10 +39,13 @@ class BaseServiceCategory(TranslatableModel, SEOStarterModel, TimestampStarterMo
         **seo_translations
     )
     in_navbar = models.BooleanField(default=False, verbose_name=_("Navigasyon içerisinde mi?"))
+    in_home = models.BooleanField(default=True, verbose_name=_("Anasayfa servisler içerisinde mi?"))
     order = models.IntegerField(default=0, verbose_name=_("Sıralama"))
     banner_image = models.ImageField(verbose_name=_("Banner Görseli"), upload_to="service/category/banner", blank=True,
                                      null=True)
     image = models.ImageField(verbose_name=_("Kategori Görseli"), upload_to="service/category", blank=True, null=True)
+    icon = models.ImageField(verbose_name=_("Kategori İconu"), upload_to="service/category/icons",
+                             blank=True, null=True)
 
     def __str__(self):
         return self.title

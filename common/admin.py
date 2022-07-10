@@ -55,14 +55,14 @@ class BaseServicesPageSeoAdmin(TranslatableAdmin):
 class BaseServiceCategoryAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Content"), {'fields': (
-            'title', 'slug', 'description', 'image', 'in_navbar', 'order')}),
+            'title', 'slug', 'description', 'image', 'in_navbar', 'in_home', 'icon', 'order')}),
         (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
-    list_display = ('title', 'slug', 'in_navbar', 'order')
-    list_filter = ('in_navbar',)
-    list_editable = ('in_navbar', 'order')
+    list_display = ('title', 'slug', 'in_navbar', 'in_home', 'order')
+    list_filter = ('in_navbar', 'in_home')
+    list_editable = ('in_navbar', 'in_home', 'order')
 
     def get_prepopulated_fields(self, request, obj=None):
         return {
