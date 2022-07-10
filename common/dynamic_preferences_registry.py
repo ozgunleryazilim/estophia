@@ -34,20 +34,11 @@ class EmailAddress(StringPreference):
 
 
 @global_preferences_registry.register
-class HomeHowItWorksYoutubeVideoLink(StringPreference):
-    section = common
-    name = 'home_howitworks_youtube_video_link'
-    default = ""
-    verbose_name = _("Home How It Works Youtube Video Link")
-
-
-@global_preferences_registry.register
 class WhatsappNumber(StringPreference):
     section = common
     name = 'whatsapp_number'
     default = ""
     verbose_name = _("Whatsapp Number")
-
 
 #
 # @global_preferences_registry.register

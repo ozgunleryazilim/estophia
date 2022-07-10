@@ -11,6 +11,8 @@ seo_fields = tuple(seo_translations.keys()) + ("meta_keywords",)
 
 class BaseHomePageSeoAdmin(TranslatableAdmin):
     fieldsets = (
+        (_("Page Information"), {'fields': ('about_youtube_link', 'about_image',
+                                            'howitworks_youtube_link', 'howitworks_image')}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)

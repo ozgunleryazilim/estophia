@@ -1,6 +1,8 @@
 {% load static i18n %}
+{% load home %}
 
-{# TODO: howitworks_url eklenecek... #}
+{% get_home_seo_obj gender=gender as home_obj %}
+
 <!-- Start of .about-3 -->
 <section class="about-3 pb-3" id="about">
     <div class="container">
@@ -20,7 +22,8 @@
             </h2>
             <p>
                 {% blocktrans trimmed %}
-                    With our online experts, doctors, treatment process and much more, we are at your side to provide you with the best service throughout the renewal process!
+                    With our online experts, doctors, treatment process and much more, we are at your side to provide
+                    you with the best service throughout the renewal process!
                 {% endblocktrans %}
             </p>
             <a href="{{ howitworks_url }}" class="read-more">{% trans "Detailed Information" %}</a>
@@ -31,20 +34,26 @@
         </div>
 
         <div class="video">
-            {# TODO: Video url guncellenecek... #}
+
             <a class="btn-video-outer" data-fancybox
-               href="{{ global_preferences.common__home_howitworks_youtube_video_link }}">
+               href="{{ home_obj.howitworks_youtube_link|default:'' }}">
                 <span class="btn-video">
                     <i class="fa fa-play btn-play"></i>{% trans "watch video" %}
                 </span>
             </a>
             <div class="img">
-                {% if gender == 'male' %}
-                {% static 'images/male/home/how-it-works.jpg' as howitworks_image %}
-                {% else %}
-                {% static 'images/female/home/how-it-works.jpg' as howitworks_image %}
-                {% endif %}
-                <img src="{{ howitworks_image }}" alt="{% trans 'Estophia How it works' %}">
+                <img
+                        {% if home_obj.howitworks_image %}
+                            src="{{ home_obj.howitworks_image.url }}"
+                        {% else %}
+                            {% if gender == 'male' %}
+                                {% static 'images/male/home/how-it-works.jpg' as default_howitworks_image %}
+                            {% else %}
+                                {% static 'images/female/home/how-it-works.jpg' as default_howitworks_image %}
+                            {% endif %}
+                            src="{{ default_howitworks_image }}"
+                        {% endif %}
+                            alt="{% trans 'Estophia How it works' %}">
             </div>
         </div>
 
@@ -54,6 +63,6 @@
 
 <div class="about-3 pt-3">
     <div class="container ">
-    {% include "components/home/gallery.html" %}
-</div>
+        {% include "components/home/gallery.html" %}
+    </div>
 </div>

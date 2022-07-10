@@ -1,46 +1,100 @@
 {% load static i18n %}
+{% load home %}
 
-{# TODO: about_url tanimlanacak... #}
+{% get_home_seo_obj gender=gender as home_obj %}
 
-<!-- Start of .about -->
-<section class="about" id="about">
-
-
+<!-- Start of .about-4 -->
+<section class="about-4" id="about">
     <div class="container">
-        <div class="wow fadeInLeft my-5 my-lg-auto" data-wow-duration="1s">
-            <div class="about__our-misson-img">
-                {% if gender == 'male' %}
-                    {% static 'images/male/home/about-img.jpg' as about_image %}
-                {% else %}
-                    {% static 'images/female/home/about-img.jpg' as about_image %}
-                {% endif %}
-                <img src="{{ about_image }}" alt="{% trans 'About Estophia' %}">
-            </div>
-        </div>
+        <div class="content">
+            <div class="video">
 
-        <div class="about__text wow fadeInRight" data-wow-duration="1s">
-            <h4>{% trans "How can we help you?" %}</h4>
-            <h1 class="section-title">
-                {% blocktrans trimmed %}
-                    Welcome to<br><span>ESTOPHIA!</span>
-                {% endblocktrans %}
-            </h1>
-            <h2>
-                {% blocktrans trimmed %}
-                    We are with you with tailor-made end-to-end aesthetic treatment solutions!
-                {% endblocktrans %}
-            </h2>
-            <p>
-                {% blocktrans trimmed %}
-                    At Estophia, we carry out the aesthetic treatment processes specific to the expectations of all our patients at the highest standards with our expert international doctors and high-tech equipment in line with personal demands.
-                {% endblocktrans %}
-            </p>
-            <a href="{{ about_url }}" class="read-more">{% trans "read more" %}</a>
-            <div class="about__text-signature">
-                <img src="{% static 'images/png/signature.png' %}" alt="signature">
-                <h4>{% trans "Medical Director" %}<br><span>Dr. Barış Demiriz</span></h4>
+                <a class="btn-video-outer" data-fancybox href="{{ home_obj.about_youtube_link }}">
+                            <span class="btn-video">
+                                <i class="fa fa-play btn-play"></i>{% trans "watch video" %}
+                            </span>
+                </a>
+                <div class="img">
+                    <img
+                            {% if home_obj.about_image %}
+                                src="{{ home_obj.about_image.url }}"
+                            {% else %}
+                                {% if gender == 'male' %}
+                                    {% static 'images/male/home/about-img.jpg' as about_image %}
+                                {% else %}
+                                    {% static 'images/female/home/about-img.jpg' as about_image %}
+                                {% endif %}
+                                src="{{ about_image }}"
+                            {% endif %}
+                                alt="{{ page_obj.section_1_title|striptags }}">
+                </div>
+            </div>
+            <div class="content-right">
+                <h1 class="section-title">
+                    {% blocktrans trimmed %}
+                        Welcome to<br><span>ESTOPHIA!</span>
+                    {% endblocktrans %}
+                </h1>
+                <h2>
+                    {% blocktrans trimmed %}
+                        We are with you with tailor-made end-to-end aesthetic treatment solutions!
+                    {% endblocktrans %}
+                </h2>
+                <p>
+                    {% blocktrans trimmed %}
+                        At Estophia, we carry out the aesthetic treatment processes specific to the expectations of all
+                        our patients at the highest standards with our expert international doctors and high-tech
+                        equipment in line with personal demands.
+                    {% endblocktrans %}
+                </p>
+                <a href="{{ about_url }}" class="read-more">{% trans "read more" %}</a>
+                <div class="about__text-signature">
+                    <img src="{% static 'images/png/signature.png' %}" alt="signature">
+                    <h4>{% trans "Medical Director" %}<br><span>Dr. Barış Demiriz</span></h4>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!-- End of .about -->
+
+{#<!-- Start of .about -->#}
+{#<section class="about" id="about">#}
+{##}
+{#    <div class="container">#}
+{#        <div class="wow fadeInLeft my-5 my-lg-auto" data-wow-duration="1s">#}
+{#            <div class="about__our-misson-img">#}
+{#                {% if gender == 'male' %}#}
+{#                    {% static 'images/male/home/about-img.jpg' as about_image %}#}
+{#                {% else %}#}
+{#                    {% static 'images/female/home/about-img.jpg' as about_image %}#}
+{#                {% endif %}#}
+{#                <img src="{{ about_image }}" alt="{% trans 'About Estophia' %}">#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div class="about__text wow fadeInRight" data-wow-duration="1s">#}
+{#            <h4>{% trans "How can we help you?" %}</h4>#}
+{#            <h1 class="section-title">#}
+{#                {% blocktrans trimmed %}#}
+{#                    Welcome to<br><span>ESTOPHIA!</span>#}
+{#                {% endblocktrans %}#}
+{#            </h1>#}
+{#            <h2>#}
+{#                {% blocktrans trimmed %}#}
+{#                    We are with you with tailor-made end-to-end aesthetic treatment solutions!#}
+{#                {% endblocktrans %}#}
+{#            </h2>#}
+{#            <p>#}
+{#                {% blocktrans trimmed %}#}
+{#                    At Estophia, we carry out the aesthetic treatment processes specific to the expectations of all our patients at the highest standards with our expert international doctors and high-tech equipment in line with personal demands.#}
+{#                {% endblocktrans %}#}
+{#            </p>#}
+{#            <a href="{{ about_url }}" class="read-more">{% trans "read more" %}</a>#}
+{#            <div class="about__text-signature">#}
+{#                <img src="{% static 'images/png/signature.png' %}" alt="signature">#}
+{#                <h4>{% trans "Medical Director" %}<br><span>Dr. Barış Demiriz</span></h4>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{#<!-- End of .about -->#}

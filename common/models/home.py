@@ -10,6 +10,12 @@ class BaseHomePageSeo(TranslatableModel, SEOStarterModel):
     translations = dict(
         **seo_translations
     )
+    about_youtube_link = models.URLField(verbose_name=_("About Youtube Link"), blank=True, null=True)
+    about_image = models.ImageField(verbose_name=_("About Section Image"), upload_to=f"home/seo", blank=True, null=True)
+
+    howitworks_youtube_link = models.URLField(verbose_name=_("About Youtube Link"), blank=True, null=True)
+    howitworks_image = models.ImageField(verbose_name=_("How it works Section Image"), upload_to=f"home/seo",
+                                         blank=True, null=True)
 
     class Meta:
         verbose_name = _("Home SEO")

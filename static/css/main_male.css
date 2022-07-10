@@ -8937,7 +8937,7 @@ a:hover {
 /**************************************************/
 .about-4 {
   position: relative;
-  padding-top: 160px;
+  padding-top: 220px;
   padding-bottom: 140px;
 }
 .about-4__bg {
@@ -14726,7 +14726,7 @@ body {
   /*---------- End .header-bottom-4 section responsive ----------*/
   /*---------- Start .about-4 section responsive ----------*/
   .about-4 {
-    padding-top: 100px;
+    padding-top: 500px;
     padding-bottom: 100px;
   }
   .about-4 > .container > .content > .video {
@@ -16120,7 +16120,7 @@ body {
   /*****************************************************/
   /*---------- Start .about-4 section responsive ----------*/
   .about-4 {
-    padding-top: 70px;
+    padding-top: 550px;
     padding-bottom: 45px;
   }
   .about-4 > .container > .content > .video {
