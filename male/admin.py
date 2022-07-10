@@ -4,7 +4,6 @@ from male import models
 
 admin.site.register(models.MaleHomePageSeo, base_admin.BaseHomePageSeoAdmin)
 admin.site.register(models.MaleHomeSlider, base_admin.BaseHomeSliderAdmin)
-admin.site.register(models.MaleHomeDepartment, base_admin.BaseHomeDepartmentAdmin)
 admin.site.register(models.MaleAboutPageSeo, base_admin.BaseAboutPageSeoAdmin)
 admin.site.register(models.MaleServicesPageSeo, base_admin.BaseServicesPageSeoAdmin)
 admin.site.register(models.MaleServiceCategory, base_admin.BaseServiceCategoryAdmin)
