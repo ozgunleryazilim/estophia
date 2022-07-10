@@ -3,14 +3,12 @@
 {% load blogs %}
 
 {% block meta %}
-    {% get_blogs_seo_obj gender=gender as obj %}
-    {% include "components/base/meta.html" %}
+    {% include "components/base/meta.html" with obj=blog %}
 {% endblock %}
 
 {% block content %}
 
-    {% get_blogs_seo_obj gender=gender as blogs_page_obj %}
-    {% include "components/banner.html" with obj=blogs_page_obj %}
+    {% include "components/banner.html" with obj=blog %}
 
 
     <!-- Start of .latest-news-4 -->

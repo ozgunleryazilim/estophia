@@ -159,7 +159,11 @@ class BaseBlogCategoryAdmin(TranslatableAdmin):
 
 
 class BaseBlogAdmin(TranslatableAdmin):
-    fields = ('category', 'title', 'slug', 'description', 'content', 'image')
+    fieldsets = (
+        (_("Content Information"), {'fields': ('category', 'title', 'slug', 'description', 'content', 'image')}),
+        (_("Banner Information"), {'fields': ('_banner_title', 'banner_description', 'banner_image')}),
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
     list_display = ('title', 'slug', 'category', 'view_count')
     list_filter = ('category',)
     search_fields = ('title', 'slug', 'description')

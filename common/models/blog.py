@@ -58,8 +58,12 @@ class BaseBlog(TranslatableModel, SEOStarterModel, TimestampStarterModel):
         description=models.TextField(_("Title"), max_length=200, blank=True, null=True),
         slug=models.SlugField(_("Slug"), max_length=200),
         content=RichTextUploadingField(_("Content Body 1"), blank=True, null=True),
+        _banner_title=models.CharField(_("Banner Title"), max_length=200, blank=True, null=True),
+        banner_description=RichTextField(verbose_name=_("Banner Description"), blank=True, null=True),
+        **seo_translations
     )
-    image = models.ImageField(verbose_name=_("Banner Image"), upload_to="blogs", blank=True, null=True)
+    image = models.ImageField(verbose_name=_("Image"), upload_to="blogs", blank=True, null=True)
+    banner_image = models.ImageField(verbose_name=_("Banner Image"), upload_to="blogs/banner", blank=True, null=True)
     view_count = models.IntegerField(default=0, verbose_name=_("View Count"))
 
     class Meta:
@@ -70,6 +74,10 @@ class BaseBlog(TranslatableModel, SEOStarterModel, TimestampStarterModel):
     def __str__(self):
         return self.title
 
+    @property
+    def banner_title(self):
+        return self._banner_title or self.title
+
     def increase_view_count(self):
         self.view_count += 1
         self.save()
@@ -77,6 +85,13 @@ class BaseBlog(TranslatableModel, SEOStarterModel, TimestampStarterModel):
     def get_absolute_url(self):
         with switch_language(self):
             return reverse(f'{self.gender}:blog_detail', args=(self.slug,))
+
+    def save(self, *args, **kwargs):
+        if not self._banner_title:
+            self._banner_title = self.title
+        if not self.seo_title:
+            self.seo_title = self.title
+        super().save(*args, **kwargs)
 
 
 class BaseBlogComment(TimestampStarterModel):

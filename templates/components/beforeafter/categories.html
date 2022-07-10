@@ -1,18 +1,16 @@
 {% load i18n %}
 {% load before_after %}
 
-<div class="categories">
-    <h1 class="blog-sidebar-title">{% trans "Categories" %}</h1>
-    <ul class="lists">
-        {% get_beforeafter_categories gender=gender as categories %}
+{% get_beforeafter_categories gender=gender as categories %}
+
+<div class="w-100">
+    <ul class="nav nav-pills nav-fill bg-dark my-4 hoverdropdown">
         {% for category in categories %}
-            <li class="item">
-                <a href="{{ category.get_absolute_url }}">
-                    <span class="name">{{ category.title }}</span>
-                    <span class="count">{{ category.blog_counts }}</span>
-                </a>
+            <li class="nav-item">
+                <a class="nav-link btn-dark"
+                   href="?category={{ category.slug }}">{{ category.title }}</a>
             </li>
         {% endfor %}
-
     </ul>
+
 </div>
