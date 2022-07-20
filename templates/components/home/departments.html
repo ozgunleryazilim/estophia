@@ -16,7 +16,7 @@
                 <a class="our-departments-2__inner-item text-dark" href="{{ category.get_absolute_url }}">
                     <div class="icon mb-1">
                         <img
-                                {% if department.icon %}
+                                {% if category.icon %}
                                     src="{{ category.icon.url }}"
                                 {% else %}
                                     src="{{ default_icon }}"
