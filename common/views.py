@@ -181,3 +181,17 @@ class AppointmentPopupFormEmailView(SliderFormEmailView):
     subject = "Estophia - Randevu formu dolduruldu: {name}"
     email_template_name = "emailtemps/appointment_popup_form.html"
     form_identifier = "appointment-popup-form"
+
+
+class ContactFormEmailView(HandleEmailFormView):
+    subject = "Estophia - İletişim sayfası formu dolduruldu: {name}"
+    email_template_name = "emailtemps/contact_form.html"
+    form_identifier = "contact-form"
+
+    def get_email_context(self, request):
+        return {
+            "gender": request.POST.get('gender', ""),
+            "name": request.POST.get('name', ""),
+            "email": request.POST.get('email', ""),
+            "message": request.POST.get('message', "")
+        }
