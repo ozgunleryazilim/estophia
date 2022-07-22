@@ -1,6 +1,7 @@
 from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _tr
 from parler.models import TranslatableModel, TranslatedFields
 
 from common.models import seo_translations, SEOStarterModel
@@ -21,6 +22,9 @@ class BaseHomePageSeo(TranslatableModel, SEOStarterModel):
         verbose_name = _("Home SEO")
         verbose_name_plural = _("Home SEO")
         abstract = True
+
+    def __str__(self):
+        return _tr("Home Page Seo")
 
 
 class BaseHomeSlider(TranslatableModel):

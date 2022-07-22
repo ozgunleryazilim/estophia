@@ -33,13 +33,16 @@ def get_service_categories(gender, limit=None, in_navbar=False, in_home=False):
 
 
 @register.simple_tag
-def get_services(gender, limit=None):
+def get_services(gender, category=None, limit=None):
     models = {
         "male": MaleServiceItem,
         "female": FemaleServiceItem
     }
     model = models.get(gender)
     query = model.objects.all()
+    if category:
+        query.filter(category=category)
+
     if limit:
         return query[:limit]
     return query

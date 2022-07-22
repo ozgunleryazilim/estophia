@@ -1,6 +1,7 @@
 from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _tr
 from parler.models import TranslatableModel
 
 from common.models import seo_translations, SEOStarterModel
@@ -22,4 +23,4 @@ class BaseContactPageSeo(TranslatableModel, SEOStarterModel):
         abstract = True
 
     def __str__(self):
-        return self.banner_title
+        return _tr("Contact Page Seo")

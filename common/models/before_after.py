@@ -3,6 +3,7 @@ from ckeditor.fields import RichTextField
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _tr
 from parler.models import TranslatableModel
 from parler.utils.context import switch_language
 
@@ -26,7 +27,7 @@ class BaseBeforeAfterPageSeo(TranslatableModel, SEOStarterModel):
         abstract = True
 
     def __str__(self):
-        return self.banner_title
+        return _tr("Before After Page Seo")
 
 
 class BaseBeforeAfterCategory(TranslatableModel, SEOStarterModel, TimestampStarterModel):

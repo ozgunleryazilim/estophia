@@ -1,5 +1,5 @@
 {% load i18n %}
-<div class="appointment">
+<div class="appointment d-none d-xl-block">
     <h1 class="title">{% trans "Fill out the form for a free consultation" %}</h1>
     <form action="{% url 'handle_services_appointment_form' %}" class="appointment-form" id="services-appointment-form"
           method="POST">

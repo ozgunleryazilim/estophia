@@ -42,6 +42,9 @@
 
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
+    {% if LANGUAGE_CODE == "fr" %}
+        <link rel="stylesheet" href="{% static 'css/custom_fr.css' %}">
+    {% endif %}
     {% block custom_css %}
 
     {% endblock %}
@@ -136,6 +139,7 @@
             window.intlTelInput(input, inputConf);
         }
     }
+
     initPhoneInput("#contact-Phone");
     initPhoneInput("#contact-side-phone");
     initPhoneInput("#appointment-Phone");

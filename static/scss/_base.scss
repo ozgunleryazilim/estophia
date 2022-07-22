@@ -59,8 +59,8 @@ ol {
     font-family: $BebasBold;
     color: $primary-pink-2;
     font-size: 80px;
-    line-height: 0.8;
-    letter-spacing: -1.6px;
+    line-height: 0.9;
+    letter-spacing: 0;
 
     &_60 {
       font-size: 60px;
@@ -74,8 +74,8 @@ ol {
     }
 
     & > span {
-      letter-spacing: -1.6px;
-      line-height: 0.8;
+      letter-spacing: 0;
+      line-height: 0.9;
       font-family: $BebasBold;
       color: $primary-blue;
     }
