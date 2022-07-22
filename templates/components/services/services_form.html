@@ -10,7 +10,18 @@
                     Looking for <span>a quality esthetic services?</span>
                 {% endblocktrans %}
             </h1>
-            <form action="#">
+            <form action="{% url 'handle_services_form' %}" id="services-form" method="POST">
+                {% csrf_token %}
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert {% if message.tags == 'error' %}alert-danger {% else %}alert-{{ message.tags }}{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <input type="hidden" name="gender" value="{{ gender }}">
+
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <input type="text" class="input-box form-control" placeholder="{% trans 'Name/Surname' %}"
@@ -23,16 +34,14 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-{#                        <input type="text" class="input-box form-control" placeholder="{% trans 'Phone Number' %}"#}
-{#                               required name="phone-number">#}
-                        <input type="tel" id="contact-phone-services" class="input-box form-control" required>
+                        <input type="tel" id="contact-phone-services" class="input-box form-control" required name="phone">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <select class="input-box form-control" required name="treatment-selection">
                             <option value="">{% trans 'Treatment Selection' %}</option>
                             {% get_service_categories gender=gender as services %}
                             {% for service in services %}
-                            <option value="{{ service.title }}">{{ service.title }}</option>
+                                <option value="{{ service.title }}">{{ service.title }}</option>
                             {% endfor %}
                         </select>
                     </div>

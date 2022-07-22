@@ -13,27 +13,38 @@
             {% endif %}
             <img src="{{ appointment_image }}" alt="{% trans 'Estophia Appointment Form' %}">
         </div>
-        <form class="form-contact">
+        <form class="form-contact" action="{% url 'handle_appointment_form' %}" method="POST"
+              id="appointment-popup-form">
+            {% csrf_token %}
             <h1 class="section-title">{% trans "Make an appointment" %}</h1>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'error' %}alert-danger {% else %}alert-{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <input type="hidden" name="gender" value="{{ gender }}">
+
             <div class="input-box">
                 <label for="popup-name">{% trans "Name" %} *</label>
-                <input type="text" id="popup-name" required>
+                <input name="name" type="text" id="popup-name" required>
             </div>
 
             <div class="input-box">
                 <label for="popup-email">{% trans "Email" %} *</label>
-                <input type="text" id="popup-email" required>
+                <input name="email" type="text" id="popup-email" required>
             </div>
 
             <div class="input-box">
                 <label for="appointment-Phone">{% trans "Phone" %} *</label>
-                <input type="tel" id="appointment-Phone" required class="appointment-phone-input">
+                <input name="phone" type="tel" id="appointment-Phone" required class="appointment-phone-input">
             </div>
 
             <div class="select-box">
                 <i class="fa fa-angle-down"></i>
                 {% get_service_categories gender=gender as service_list %}
-                <select>
+                <select name="treatment-selection">
                     <option value="">{% trans "Choose Service" %}</option>
                     {% for service in service_list %}
                         <option value="{{ service.slug }}">{{ service.title }}</option>
@@ -42,8 +53,11 @@
             </div>
             <div class="input-box">
                 <label for="your-message">{% trans "Your Message" %} *</label>
-                <input type="text" id="your-message" required>
+                <input name="message" type="text" id="your-message" required>
             </div>
+
+            {% include "recaptcha/recaptcha.html" %}
+
             <button type="submit" class="btn btn-2_pink">{% trans "Send" %}</button>
         </form>
     </div>

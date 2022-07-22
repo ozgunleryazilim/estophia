@@ -1,11 +1,24 @@
 {% load i18n %}
 <div class="appointment">
     <h1 class="title">{% trans "Fill out the form for a free consultation" %}</h1>
-    <form action="" class="appointment-form">
-        <input type="text" placeholder="{% trans 'Name&Surname' %}*">
-        <input type="email" placeholder="{% trans 'E-mail' %}*">
-        <input type="tel" id="contact-Phone" class="input-box form-control" required>
-        <textarea placeholder="{% trans 'Message' %}"></textarea>
+    <form action="{% url 'handle_services_appointment_form' %}" class="appointment-form" id="services-appointment-form"
+          method="POST">
+        {% csrf_token %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags == 'error' %}alert-danger {% else %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <input type="hidden" name="gender" value="{{ gender }}">
+        <input name="name" type="text" placeholder="{% trans 'Name&Surname' %}*">
+        <input name="email" type="email" placeholder="{% trans 'E-mail' %}*">
+        <input name="phone" type="tel" id="contact-Phone" class="input-box form-control" required>
+        <textarea name="message" placeholder="{% trans 'Message' %}" class="mt-2"></textarea>
+
+        {% include "recaptcha/recaptcha.html" %}
         <button type="submit" class="btn btn_pink">{% trans 'Send' %}</button>
     </form>
 </div>

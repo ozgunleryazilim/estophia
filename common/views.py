@@ -8,7 +8,7 @@ from parler.views import TranslatableSlugMixin
 
 from utils.recaptcha import validate_recaptcha, RecaptchaValidationError
 from utils.views import PaginatedListViewMixin, GenderedViewMixin, TranslatableDetailViewMixin, CategoriedListView, \
-    DetailListView
+    DetailListView, HandleEmailFormView
 
 
 class BaseServiceCategoryListView(GenderedViewMixin, PaginatedListViewMixin, ListView):
@@ -125,3 +125,59 @@ class BaseSearchView(View):
             'gender': self.gender,
         }
         return render(request, self.template_name, context)
+
+
+class SliderFormEmailView(HandleEmailFormView):
+    subject = "Estophia - Ansayfa Slider formu dolduruldu: {name}"
+    email_template_name = "emailtemps/home_slider_form.html"
+    form_identifier = "slider-form"
+
+    def get_email_context(self, request):
+        return {
+            "gender": request.POST.get('gender', ""),
+            "name": request.POST.get('name', ""),
+            "email": request.POST.get('email', ""),
+            "treatment": request.POST.get('treatment-selection', ""),
+            "full_phone_number": request.POST.get('contact-full_number', ""),
+            "phone": request.POST.get('phone', ""),
+            "message": request.POST.get('message', "")
+        }
+
+
+class ServicesFormEmailView(HandleEmailFormView):
+    subject = "Estophia - Servisler sayfası iletişim formu dolduruldu: {name}"
+    email_template_name = "emailtemps/services_form.html"
+    form_identifier = "services-form"
+
+    def get_email_context(self, request):
+        return {
+            "gender": request.POST.get('gender', ""),
+            "name": request.POST.get('name', ""),
+            "email": request.POST.get('email', ""),
+            "treatment": request.POST.get('treatment-selection', ""),
+            "full_phone_number": request.POST.get('contact-full_number', ""),
+            "phone": request.POST.get('phone', ""),
+            "message": request.POST.get('message', "")
+        }
+
+
+class ServicesAppointmentFormEmailView(HandleEmailFormView):
+    subject = "Estophia - Servisler randevu formu dolduruldu: {name}"
+    email_template_name = "emailtemps/services_appointment_form.html"
+    form_identifier = "services-appointment-form"
+
+    def get_email_context(self, request):
+        return {
+            "gender": request.POST.get('gender', ""),
+            "name": request.POST.get('name', ""),
+            "email": request.POST.get('email', ""),
+            "full_phone_number": request.POST.get('contact-full_number', ""),
+            "phone": request.POST.get('phone', ""),
+            "message": request.POST.get('message', "")
+        }
+
+
+class AppointmentPopupFormEmailView(SliderFormEmailView):
+    subject = "Estophia - Randevu formu dolduruldu: {name}"
+    email_template_name = "emailtemps/appointment_popup_form.html"
+    form_identifier = "appointment-popup-form"
