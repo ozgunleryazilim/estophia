@@ -40,36 +40,26 @@ class WhatsappNumber(StringPreference):
     default = ""
     verbose_name = _("Whatsapp Number")
 
-#
-# @global_preferences_registry.register
-# class InstagramLink(StringPreference):
-#     section = page
-#     name = 'instagram_link'
-#     default = ""
-#     verbose_name = _("İnstagram Linki")
-#
-#
-# @global_preferences_registry.register
-# class TwitterLink(StringPreference):
-#     section = page
-#     name = 'twitter_link'
-#     default = ""
-#     verbose_name = _("Twitter Linki")
-#
-#
-# @global_preferences_registry.register
-# class YoutubeLink(StringPreference):
-#     section = page
-#     name = 'youtube_link'
-#     default = ""
-#     verbose_name = _("Youtube Linki")
-#
-#
-#
-#
-# @global_preferences_registry.register
-# class Address(StringPreference):
-#     section = page
-#     name = 'address'
-#     default = ""
-#     verbose_name = _("Adres")
+
+@global_preferences_registry.register
+class FacebookLink(StringPreference):
+    section = common
+    name = 'facebook_link'
+    default = "https://www.facebook.com/Estophia/"
+    verbose_name = _("Facebook Linki")
+
+
+@global_preferences_registry.register
+class InstagramLink(StringPreference):
+    section = common
+    name = 'instagram_link'
+    default = "https://www.instagram.com/estophia_aesthetic/?hl=tr"
+    verbose_name = _("İnstagram Linki")
+
+
+@global_preferences_registry.register
+class YoutubeLink(StringPreference):
+    section = common
+    name = 'youtube_link'
+    default = ""
+    verbose_name = _("Youtube Linki")
