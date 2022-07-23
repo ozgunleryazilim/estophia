@@ -41,7 +41,7 @@ def get_services(gender, category=None, limit=None):
     model = models.get(gender)
     query = model.objects.all()
     if category:
-        query.filter(category=category)
+        query = query.filter(category=category)
 
     if limit:
         return query[:limit]
