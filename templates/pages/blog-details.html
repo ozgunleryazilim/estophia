@@ -62,3 +62,9 @@
 
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% with obj=blog %}
+    {{block.super}}
+    {% endwith %}
+{% endblock %}

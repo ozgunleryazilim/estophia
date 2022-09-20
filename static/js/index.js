@@ -298,7 +298,7 @@ $("document").ready(function ($) {
     if ($("#popup-form-open, #popup-form-open-mobile").length) {
         $("#popup-form-open, #popup-form-open-mobile").on("click", function (event) {
             event.preventDefault();
-            $(".popup-form").css({
+            $(".appointment-popup-form").css({
                 opacity: "1",
                 top: "0",
             });
@@ -307,7 +307,17 @@ $("document").ready(function ($) {
 
     if ($("#popup-form-close").length) {
         $("#popup-form-close").on("click", function () {
-            $(".popup-form").css({
+            $(".appointment-popup-form").css({
+                opacity: "0",
+                top: "-120%",
+            });
+        });
+    }
+
+    if ($("#ad-popup-form-close").length) {
+        $("#ad-popup-form-close").on("click", function () {
+            $('.ad-popup-form').removeClass('show');
+            $(".ad-popup-form").css({
                 opacity: "0",
                 top: "-120%",
             });

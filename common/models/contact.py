@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _tr
 from parler.models import TranslatableModel
 
 from common.models import seo_translations, SEOStarterModel
+from popup.models import Popup
 
 
 class BaseContactPageSeo(TranslatableModel, SEOStarterModel):
@@ -16,6 +17,8 @@ class BaseContactPageSeo(TranslatableModel, SEOStarterModel):
     )
     banner_image = models.ImageField(verbose_name=_("Banner Image"), upload_to=f"contact/{gender}", blank=True,
                                      null=True)
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                              null=True, verbose_name=_("Popup"))
 
     class Meta:
         verbose_name = _("Contact Page SEO")

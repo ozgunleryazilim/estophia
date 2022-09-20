@@ -38,3 +38,8 @@
 
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% get_blogs_seo_obj gender=gender as obj %}
+    {{block.super}}
+{% endblock %}

@@ -84,3 +84,8 @@
     <!-- End of .shop -->
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% get_contact_seo_obj gender=gender as obj %}
+    {{block.super}}
+{% endblock %}

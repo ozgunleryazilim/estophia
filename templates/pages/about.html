@@ -17,3 +17,8 @@
     {% include "components/about/about_2.html" %}
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% get_about_seo_obj gender=gender as obj %}
+    {{block.super}}
+{% endblock %}

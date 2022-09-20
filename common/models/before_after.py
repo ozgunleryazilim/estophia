@@ -8,6 +8,7 @@ from parler.models import TranslatableModel
 from parler.utils.context import switch_language
 
 from common.models import seo_translations, SEOStarterModel
+from popup.models import Popup
 from utils.models import TimestampStarterModel
 
 
@@ -20,6 +21,8 @@ class BaseBeforeAfterPageSeo(TranslatableModel, SEOStarterModel):
     )
     banner_image = models.ImageField(verbose_name=_("Banner Image"), upload_to=f"beforeafter/{gender}/banner",
                                      blank=True, null=True)
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                            null=True, verbose_name=_("Popup"))
 
     class Meta:
         verbose_name = _("Before After Page SEO")
@@ -45,6 +48,8 @@ class BaseBeforeAfterCategory(TranslatableModel, SEOStarterModel, TimestampStart
                                      blank=True, null=True)
     image = models.ImageField(verbose_name=_("Kategori Görseli"), upload_to="before_after/category", blank=True,
                               null=True)
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                              null=True, verbose_name=_("Popup"))
 
     def __str__(self):
         return self.title

@@ -33,3 +33,8 @@
 
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% get_services_seo_obj gender=gender as obj %}
+    {{block.super}}
+{% endblock %}

@@ -24,3 +24,8 @@
     <!-- End of departments-3 -->
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% get_kvkk_seo_obj gender=gender as obj %}
+    {{block.super}}
+{% endblock %}

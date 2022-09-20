@@ -31,3 +31,9 @@
     {% include "components/home/blogs.html" %}
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% get_home_seo_obj gender=gender as obj %}
+    
+    {{block.super}}
+{% endblock %}

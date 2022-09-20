@@ -8,4 +8,5 @@ urlpatterns = [
     path('handle_contact_form/', views.ContactFormEmailView.as_view(), name="handle_contact_form"),
     path('handle_services_appointment_form/', views.ServicesAppointmentFormEmailView.as_view(),
          name="handle_services_appointment_form"),
+    path('handle_popup_form/', views.PopupFormEmailView.as_view(), name="handle_popup_form"),
 ]

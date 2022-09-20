@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'common',
     'male',
     'female',
-
+    'popup',
 ]
 
 MIDDLEWARE = [

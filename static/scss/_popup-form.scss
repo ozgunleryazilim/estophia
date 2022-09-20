@@ -30,7 +30,7 @@
         justify-content: space-between;
         overflow: hidden;
 
-        & > #popup-form-close {
+        & > .popup-form-close {
             user-select: none;
             position: absolute;
             right: 15px;
@@ -52,7 +52,7 @@
             width: 100%;
             width: 100%;
             height: 100%;
-            background-color: magenta;
+            background-color: $primary-pink-2;
             
             & > img {
                 height: 100%;
@@ -166,6 +166,11 @@
                 text-align: center;
             }
         }
+    }
+
+    &.show{
+        opacity: 1;
+        top: 0;
     }
 }
 

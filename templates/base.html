@@ -89,11 +89,18 @@
     <i class="fa fa-whatsapp"></i>
 </a>
 
-{% block popup_modals %}
+{% block modal_dialogs %}
     {% include "components/base/search-box.html" %}
 
     {% include "components/base/appointment-form.html" %}
 {% endblock %}
+
+{% block popup_modal %}
+    {% if obj.popup and obj.popup.is_active %}
+    {% include "components/popup/popup-form.html" with popup=obj.popup %}
+    {% endif %}
+{% endblock %}
+
 <!-- jQuery -->
 <script src="{% static 'js/jQuery-3.4.1.js' %}"></script>
 
@@ -144,6 +151,7 @@
     initPhoneInput("#contact-side-phone");
     initPhoneInput("#appointment-Phone");
     initPhoneInput("#contact-phone-services");
+    initPhoneInput("#popup-Phone");
 
 </script>
 

@@ -9,6 +9,7 @@ from parler.utils.context import switch_language
 
 from common.models import seo_translations, SEOStarterModel
 from utils.models import TimestampStarterModel
+from popup.models import Popup
 
 
 class BaseServicesPageSeo(TranslatableModel, SEOStarterModel):
@@ -20,7 +21,8 @@ class BaseServicesPageSeo(TranslatableModel, SEOStarterModel):
     )
     banner_image = models.ImageField(verbose_name=_("Banner Image"), upload_to="about/{gender}", blank=True,
                                      null=True)
-
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                              null=True, verbose_name=_("Popup"))
     class Meta:
         verbose_name = _("Services SEO")
         verbose_name_plural = _("Services SEO")
@@ -47,6 +49,9 @@ class BaseServiceCategory(TranslatableModel, SEOStarterModel, TimestampStarterMo
     image = models.ImageField(verbose_name=_("Kategori Görseli"), upload_to="service/category", blank=True, null=True)
     icon = models.ImageField(verbose_name=_("Kategori İconu"), upload_to="service/category/icons",
                              blank=True, null=True)
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                              null=True, verbose_name=_("Popup"))
+    
 
     def __str__(self):
         return self.title
@@ -79,6 +84,8 @@ class BaseServiceItem(TranslatableModel, SEOStarterModel, TimestampStarterModel)
     image = models.ImageField(_("Service Image"), upload_to="services", blank=True, null=True)
     in_home = models.BooleanField(_("In home page services section?"), default=False)
     order = models.IntegerField(default=1, verbose_name=_("Ordering"))
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                              null=True, verbose_name=_("Popup"))
 
     class Meta:
         verbose_name = _("Service Item")

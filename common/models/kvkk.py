@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext as _tr
 from parler.models import TranslatableModel
-
+from popup.models import Popup
 from common.models import seo_translations, SEOStarterModel
 
 
@@ -18,7 +18,8 @@ class BaseKVKKPageSeo(TranslatableModel, SEOStarterModel):
     )
     banner_image = models.ImageField(verbose_name=_("Banner Image"), upload_to=f"kvkk/{gender}", blank=True,
                                      null=True)
-
+    popup = models.ForeignKey(Popup, on_delete=models.SET_NULL, blank=True,
+                              null=True, verbose_name=_("Popup"))
     class Meta:
         verbose_name = _("KVKK Page SEO")
         verbose_name_plural = _("KVKK Page SEO")

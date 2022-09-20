@@ -12,7 +12,9 @@ seo_fields = tuple(seo_translations.keys()) + ("meta_keywords",)
 class BaseHomePageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Page Information"), {'fields': ('about_youtube_link', 'about_image',
-                                            'howitworks_youtube_link', 'howitworks_image')}),
+                                            'howitworks_youtube_link', 
+                                            'howitworks_image',)}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -20,6 +22,7 @@ class BaseHomePageSeoAdmin(TranslatableAdmin):
 
 class BaseSearchPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -38,9 +41,10 @@ class BaseHomeDepartmentAdmin(TranslatableAdmin):
 class BaseAboutPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Section 1"), {'fields': (
-            'section_1_pretitle', 'section_1_title', 'section_1_subtitle', 'section_1_body', 'section_1_image',
-            'section_1_youtube_link')}),
+            'section_1_pretitle', 'section_1_title', 'section_1_subtitle', 
+            'section_1_body', 'section_1_image','section_1_youtube_link')}),
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -49,6 +53,7 @@ class BaseAboutPageSeoAdmin(TranslatableAdmin):
 class BaseServicesPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -59,6 +64,7 @@ class BaseServiceCategoryAdmin(TranslatableAdmin):
         (_("Content"), {'fields': (
             'title', 'slug', 'description', 'image', 'in_navbar', 'in_home', 'icon', 'order')}),
         (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -77,6 +83,7 @@ class BaseServiceItemAdmin(TranslatableAdmin):
         (_("Content"), {'fields': ('category', 'title', 'slug', 'home_description',
                                    'content', 'image', 'in_home', 'order')}),
         (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -103,6 +110,7 @@ class BaseServiceOurCasesAdmin(TranslatableAdmin):
 class BaseHowitworksPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -111,6 +119,7 @@ class BaseHowitworksPageSeoAdmin(TranslatableAdmin):
 class BaseBeforeAfterPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -121,6 +130,7 @@ class BaseBeforeAfterCategoryAdmin(TranslatableAdmin):
         (_("Content"), {'fields': (
             'title', 'slug', 'description', 'image', 'in_navbar', 'order')}),
         (_("Banner Information"), {'fields': ('banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -144,6 +154,7 @@ class BaseBeforeAfterItemAdmin(admin.ModelAdmin):
 class BaseBlogsPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -164,6 +175,7 @@ class BaseBlogAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Content Information"), {'fields': ('category', 'title', 'slug', 'description', 'content', 'image')}),
         (_("Banner Information"), {'fields': ('_banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     list_display = ('title', 'slug', 'category', 'view_count')
@@ -179,6 +191,7 @@ class BaseBlogAdmin(TranslatableAdmin):
 class BaseContactPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)
@@ -188,6 +201,7 @@ class BaseKVKKPageSeoAdmin(TranslatableAdmin):
     fieldsets = (
         (_("KVKK Information"), {'fields': ('content',)}),
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
     filter_vertical = ('meta_keywords',)

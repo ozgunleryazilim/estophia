@@ -39,3 +39,9 @@
     </section>
 
 {% endblock %}
+
+{% block popup_modal %}
+    {% with obj=service %}
+    {{block.super}}
+    {% endwith %}
+{% endblock %}
