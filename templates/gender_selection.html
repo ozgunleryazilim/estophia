@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% load i18n static %}
+{% load gender_selection %}
+
+{% block meta %}
+    {% get_genderselection_seo_obj as obj %}
+    {% include "components/base/meta.html" %}
+{% endblock %}
 
 {% block custom_css %}
     <link rel="stylesheet" href="{% static 'css/gender_selection.css' %}">
@@ -69,4 +75,9 @@
 
 {% block footer %}
     {% include "components/gender_selection/footer.html" %}
+{% endblock %}
+
+{% block popup_modal %}
+    {% get_genderselection_seo_obj as obj %}
+    {{block.super}}
 {% endblock %}

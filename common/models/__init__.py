@@ -8,3 +8,4 @@ from .blog import *
 from .contact import *
 from .kvkk import *
 from .search import *
+from .gender_selection import *

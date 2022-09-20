@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from parler.admin import TranslatableAdmin
 
-from common.models import Keywords, seo_translations
+from common.models import Keywords, seo_translations, GenderSelectionPageSeo
 from utils.admin import OneEntityModel
 
 admin.site.register(Keywords, TranslatableAdmin)
@@ -202,6 +202,15 @@ class BaseKVKKPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("KVKK Information"), {'fields': ('content',)}),
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
+        (_("Popup Information"), {'fields': ('popup',)}),
+        (_("Seo Information"), {'fields': seo_fields}),
+    )
+    filter_vertical = ('meta_keywords',)
+
+
+@admin.register(GenderSelectionPageSeo)
+class GenderSelectionPageSeoAdmin(TranslatableAdmin, OneEntityModel):
+    fieldsets = (
         (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
     )
