@@ -5,7 +5,7 @@
 <div class="popup-form ad-popup-form show">
     <div class="inner-block">
         <span class="popup-form-close" id="ad-popup-form-close">&times;</span>
-        <div class="img">
+        <div class="img d-none d-md-block">
             
             {% if popup.image %}
             <img src="{{ popup.image.url }}" alt="{% trans 'Estophia Appointment Form' %}">
@@ -22,6 +22,9 @@
               id="ad-popup-form">
             {% csrf_token %}
             <h1 class="section-title">{{popup.title|default:""}}</h1>
+
+            <p>{{popup.subtitle|linebreaksbr}}</p>
+
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert {% if message.tags == 'error' %}alert-danger {% else %}alert-{{ message.tags }}{% endif %}">
@@ -55,9 +58,9 @@
                     {% endfor %}
                 </select>
             </div>
-            <div class="input-box">
+            <div class="input-box input-textarea">
                 <label for="your-message">{% trans "Your Message" %} *</label>
-                <input name="message" type="text" id="your-message" required>
+                <textarea name="message" type="text" id="your-message" required></textarea>
             </div>
 
             {% include "recaptcha/recaptcha.html" %}

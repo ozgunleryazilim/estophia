@@ -3820,9 +3820,7 @@ a:hover {
   left: 0;
   top: -200%;
   min-height: 100vh;
-  height: 100%;
   width: 100%;
-  height: 500px;
   background-color: rgba(51, 51, 51, 0.7);
   overflow-y: auto;
   z-index: 99999;
@@ -3835,9 +3833,8 @@ a:hover {
 .popup-form > .inner-block {
   position: relative;
   border-radius: 8px;
-  max-width: 740px;
+  max-width: 1000px;
   width: 100%;
-  height: 500px;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -3860,10 +3857,7 @@ a:hover {
 }
 .popup-form > .inner-block > .img {
   overflow: hidden;
-  max-width: 340px;
   width: 100%;
-  width: 100%;
-  height: 100%;
   background-color: #2e4899;
 }
 .popup-form > .inner-block > .img > img {
@@ -3899,7 +3893,7 @@ a:hover {
   font-size: 18px;
   transition: all 0.3s linear;
 }
-.popup-form > .inner-block > form > .input-box > input {
+.popup-form > .inner-block > form > .input-box > input, .popup-form > .inner-block > form > .input-box > textarea {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -3911,6 +3905,12 @@ a:hover {
   font-size: 20px;
   font-weight: 700;
   color: #333333;
+}
+.popup-form > .inner-block > form > .input-box.input-textarea {
+  height: 100px;
+}
+.popup-form > .inner-block > form > .input-box.input-textarea textarea {
+  height: 100px;
 }
 .popup-form > .inner-block > form > .input-box:hover, .popup-form > .inner-block > form > .input-box:focus {
   border-bottom-color: #333333;
@@ -3970,7 +3970,8 @@ a:hover {
 @media (max-width: 768px) {
   .popup-form > .inner-block {
     height: initial;
-    max-width: 300px;
+    max-width: 400px;
+    width: 80%;
   }
   .popup-form > .inner-block > .img {
     display: none;
