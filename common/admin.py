@@ -3,13 +3,14 @@ from django.utils.translation import ugettext_lazy as _
 from parler.admin import TranslatableAdmin
 
 from common.models import Keywords, seo_translations
+from utils.admin import OneEntityModel
 
 admin.site.register(Keywords, TranslatableAdmin)
 
 seo_fields = tuple(seo_translations.keys()) + ("meta_keywords",)
 
 
-class BaseHomePageSeoAdmin(TranslatableAdmin):
+class BaseHomePageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Page Information"), {'fields': ('about_youtube_link', 'about_image',
                                             'howitworks_youtube_link', 
@@ -20,7 +21,7 @@ class BaseHomePageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
-class BaseSearchPageSeoAdmin(TranslatableAdmin):
+class BaseSearchPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Popup Information"), {'fields': ('popup',)}),
         (_("Seo Information"), {'fields': seo_fields}),
@@ -38,7 +39,7 @@ class BaseHomeDepartmentAdmin(TranslatableAdmin):
     list_display = ('title',)
 
 
-class BaseAboutPageSeoAdmin(TranslatableAdmin):
+class BaseAboutPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Section 1"), {'fields': (
             'section_1_pretitle', 'section_1_title', 'section_1_subtitle', 
@@ -50,7 +51,7 @@ class BaseAboutPageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
-class BaseServicesPageSeoAdmin(TranslatableAdmin):
+class BaseServicesPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
         (_("Popup Information"), {'fields': ('popup',)}),
@@ -107,7 +108,7 @@ class BaseServiceOurCasesAdmin(TranslatableAdmin):
     list_display = ('service', 'title')
 
 
-class BaseHowitworksPageSeoAdmin(TranslatableAdmin):
+class BaseHowitworksPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
         (_("Popup Information"), {'fields': ('popup',)}),
@@ -116,7 +117,7 @@ class BaseHowitworksPageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
-class BaseBeforeAfterPageSeoAdmin(TranslatableAdmin):
+class BaseBeforeAfterPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
         (_("Popup Information"), {'fields': ('popup',)}),
@@ -151,7 +152,7 @@ class BaseBeforeAfterItemAdmin(admin.ModelAdmin):
     list_filter = ('category', 'in_home')
 
 
-class BaseBlogsPageSeoAdmin(TranslatableAdmin):
+class BaseBlogsPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
         (_("Popup Information"), {'fields': ('popup',)}),
@@ -188,7 +189,7 @@ class BaseBlogAdmin(TranslatableAdmin):
         }
 
 
-class BaseContactPageSeoAdmin(TranslatableAdmin):
+class BaseContactPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
         (_("Popup Information"), {'fields': ('popup',)}),
@@ -197,7 +198,7 @@ class BaseContactPageSeoAdmin(TranslatableAdmin):
     filter_vertical = ('meta_keywords',)
 
 
-class BaseKVKKPageSeoAdmin(TranslatableAdmin):
+class BaseKVKKPageSeoAdmin(TranslatableAdmin, OneEntityModel):
     fieldsets = (
         (_("KVKK Information"), {'fields': ('content',)}),
         (_("Banner Information"), {'fields': ('banner_title', 'banner_description', 'banner_image')}),
