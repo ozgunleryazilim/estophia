@@ -21,9 +21,23 @@
     &.whatsapp-btn{
         bottom: 80px;
         background-color: $whatsapp-color;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    
         &:hover{
             background-color: white;
             color: $whatsapp-color;
+        }
+        span{
+            font-weight: 600;
+        }
+        .fa {
+            display: block;
+            flex-grow: 1;
+            width: 30px;
+            text-align: right;
         }
     }
     

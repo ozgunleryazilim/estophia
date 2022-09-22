@@ -93,10 +93,7 @@
 <!-- scroll top - to top page -->
 <div class="sticky-btn to-top" id="scrollUp"><i class="fa fa-angle-up"></i></div>
 
-<a href="https://api.whatsapp.com/send?phone={{ global_preferences.common__whatsapp_number }}"
-   class="sticky-btn to-top whatsapp-btn" id="whatsappBtn" target="_blank">
-    <i class="fa fa-whatsapp"></i>
-</a>
+{% include "components/base/whatsapp-btn.html" %}
 
 {% block modal_dialogs %}
     {% include "components/base/search-box.html" %}
